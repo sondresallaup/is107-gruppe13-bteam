@@ -24,6 +24,10 @@ function updateProsjekt(){
 function updateKontakt(){
 	document.getElementById("iframewindow").src="kontakt.php"
 }
+
+function updateBygg(){
+	document.getElementById("iframewindow").src="bygg.php"
+}
 </script>
 
 
@@ -43,7 +47,7 @@ function updateKontakt(){
 	<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>
 	<li class="top"><a class="menu" href="#" onclick="updateProsjekt()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 	<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
-	<li class="top"><a class="menu" href="bygg.php" target="_blank"><abbr title="Bygg">Bygg</abbr></a></li>
+	<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
 </ul>
 </div>
 
