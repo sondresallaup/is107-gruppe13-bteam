@@ -37,7 +37,7 @@ function updateBygg(){
 
 <!-- Tittel. -->
 <div class="header">	
-	<h1><a id="header" href="index.php"><abbr title="Forside">PC Byggaren</abbr></a></h1>
+	<h1><a id="header" href="http://kongeprosjekter.net/"><abbr title="Forside">PC Byggaren</abbr></a></h1>
 </div>
 
 
