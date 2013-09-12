@@ -15,7 +15,6 @@
 <p>Dette er forsiden til prosjekt B-Team.<br> 
 Her kommer funksjonalitet som skal gjøre det lettere for alle å bygge sin egen <br>stasjonære PC.
 Prosjektet har en antatt ferdigstillingsdato den 30. oktober.<br>
-Sondre har tatt over internett :P <br>
 
 
 </div>
