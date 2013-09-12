@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- class er .  id er # -->
 <link rel="stylesheet" type="text/css" href="teststyle.css">
 <title>PC Byggaren</title>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <!-- Vises ved menyklikk "Min profil" ref index.php, endring i source i iframe ref funksjon i index.php. Funksjonalitet kommer. -->

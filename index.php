@@ -4,7 +4,7 @@
 <!-- class er .  id er # -->
 <link rel="stylesheet" type="text/css" href="teststyle.css">
 <title>PC Byggaren</title>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 
@@ -37,7 +37,7 @@ function updateBygg(){
 
 <!-- Tittel. -->
 <div class="header">	
-	<h1><a id="header" href="index.php"><abbr title="Forside">PC Byggaren</abbr></a></h1>
+	<h1><a id="header" href="http://kongeprosjekter.net/"><abbr title="Forside">PC Byggaren</abbr></a></h1>
 </div>
 
 
