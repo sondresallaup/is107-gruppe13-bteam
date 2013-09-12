@@ -54,7 +54,7 @@ Kopi av meny og struktur ref index.php + intro. Funksjonalitet kommer -->
 >>>>>>> 27eb910176cd7215799a03f72fa3d89fc7aee973
 =======
 	<p class="byggtekst">Her begynner byggefunksjonen. Start byggingen ved å trykke på ikonet!</p><br><br>
-	<a href="byggstart.php"><img src="bygg.jpg" class="byggikon" alt="byggikon" width="300" height="100"></a>	
+	<a href="byggstart.php"><img src="bygg.png" class="byggikon" alt="byggikon" width="300" height="100"></a>	
 
 >>>>>>> 957d16abf71ff3c04118bdb27912986f990f4bbf
 </div>
