@@ -1,88 +1,93 @@
-body{
-margin:20px;
-padding:0px;
-text-align:center;
-font-family:verdana;
+body {
+	margin: 20px;
+	padding: 0px;
+	text-align: center;
+	font-family: verdana;
 }
 
-h4{
-margin:5px 0px;
+h4 {
+	margin: 5px 0px;
 }
 
-img{
-float:left;
-margin:0px 4px 4px 0px;
+img {
+	float: left;
+	margin: 0px 4px 4px 0px;
 }
 
-iframe{
-float:left;
-margin:0px;margin-right:10px;
-border:none;
-background-color:gray;
+iframe {
+	float: left;
+	margin: 0px;	margin-right: 10px;
+	border: none;
+	background-color: gray;
 }
 
-li{
-list-style-type:none;
+li {
+	list-style-type: none;
 }
 
-li.top{
-display:inline;
-position:relative;
-top:15px;
-right:20px;
-margin:0px 10px;
+li.top {
+	display: inline;
+	position: relative;
+	top: 15px;
+	right: 20px;
+	margin: 0px 10px;
 }
 
-a{
-text-decoration:none;
+a {
+	text-decoration: none;
 }
 
-a#header{
+#logo {
+	margin-left: 210px;
 }
 
-a.menu:link,a.menu:visited{
-color:#FFFFFF;
-background-color:#000000;
-text-decoration:none;
-font-weight:bold; 
+a.menu:link, a.menu:visited {
+	color: #FFFFFF;
+	background-color: #000000;
+	text-decoration: none;
+	font-weight: bold;
 }
 
-a.menu:hover,a.menu:active{
-color:#AAAAAA;
-text-decoration:none;
+a.menu:hover, a.menu:active {
+	color: #AAAAAA;
+	text-decoration: none;
 }
 
-#content{
-width:1000px;
-margin:0px auto;
-text-align:left;
-padding:5px;
+#content {
+	width: 1000px;
+	margin: 0px auto;
+	text-align: left;
+	padding: 5px;
 }
 
-.header{
-text-align:center;
+.header {
+	text-align: center;
 }
 
-.menutop{
-background-color:#000000;
-width:1000px;
-height:50px;
-margin:0px 0px 20px 0px;
-float:top;
+.menutop {
+	background-color: #000000;
+	width: 1000px;
+	height: 50px;
+	margin: 0px 0px 20px 0px;
+	float: top;
 }
 
-.infowindow{
-background-color:grey;
-width:790px;margin-right: 10px;height:600px;
-float:left;
+.infowindow {
+	background-color: grey;
+	width: 790px;	margin-right: 10px;	height: 600px;
+	float: left;
 }
-.sidebar{
-background-color:grey;
-width:200px;height:600px;
-float:left;
-}.byggikon{margin-left: 200px;}.bygglist{list-style-type: inline;	}.byggimg {
-margin-right:80px;
-margin-top:50px;
-width:75px;
-height:75px;
+.sidebar {
+	background-color: grey;
+	width: 200px;	height: 600px;
+	float: left;
+}
+.byggikon {	margin-left: 200px;}
+.bygglist {	list-style-type: inline;}
+
+.byggimg {
+	margin-right: 80px;
+	margin-top: 50px;
+	width: 75px;
+	height: 75px;
 }
