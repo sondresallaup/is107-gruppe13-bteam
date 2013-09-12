@@ -2,6 +2,7 @@
 <html>
 <head>
 <!-- class er .  id er # -->
+<LINK REL="SHORTCUT ICON" HREF="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="teststyle.css">
 <title>PC Byggaren</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

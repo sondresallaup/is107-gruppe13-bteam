@@ -1,83 +1,88 @@
-body{
+body{
 margin:20px;
 padding:0px;
 text-align:center;
-font-family:verdana;
+font-family:verdana;
 }
 
-h4{
-margin:5px 0px;
+h4{
+margin:5px 0px;
 }
 
-img{
+img{
 float:left;
-margin:0px 4px 4px 0px;
+margin:0px 4px 4px 0px;
 }
 
-iframe{
+iframe{
 float:left;
 margin:0px;margin-right:10px;
 border:none;
-background-color:gray;
+background-color:gray;
 }
 
-li{
-list-style-type:none;
+li{
+list-style-type:none;
 }
 
-li.top{
+li.top{
 display:inline;
 position:relative;
 top:15px;
 right:20px;
-margin:0px 10px;
+margin:0px 10px;
 }
 
-a{
-text-decoration:none;
+a{
+text-decoration:none;
 }
 
-a#header{
+a#header{
 }
 
-a.menu:link,a.menu:visited{
+a.menu:link,a.menu:visited{
 color:#FFFFFF;
 background-color:#000000;
 text-decoration:none;
-font-weight:bold; 
+font-weight:bold; 
 }
 
-a.menu:hover,a.menu:active{
+a.menu:hover,a.menu:active{
 color:#AAAAAA;
-text-decoration:none;
+text-decoration:none;
 }
 
-#content{
+#content{
 width:1000px;
 margin:0px auto;
 text-align:left;
-padding:5px;
+padding:5px;
 }
 
-.header{
-text-align:center;
+.header{
+text-align:center;
 }
 
-.menutop{
+.menutop{
 background-color:#000000;
 width:1000px;
 height:50px;
 margin:0px 0px 20px 0px;
-float:top;
+float:top;
 }
 
-.infowindow{
+.infowindow{
 background-color:grey;
 width:790px;margin-right: 10px;height:600px;
-float:left;
+float:left;
 }
-.sidebar{
+.sidebar{
 background-color:grey;
 width:200px;height:600px;
-float:left;
-}.byggikon{	margin-left: 200px;}.bygglist{	list-style-type: inline;	}.byggimg {	padding:50px;}
+float:left;
+}.byggikon{margin-left: 200px;}.bygglist{list-style-type: inline;	}.byggimg {
+margin-right:80px;
+margin-top:50px;
+width:75px;
+height:75px;
+}
