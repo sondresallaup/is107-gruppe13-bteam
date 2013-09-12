@@ -3,10 +3,14 @@
 <head>
 <!-- class er .  id er # -->
 <LINK REL="SHORTCUT ICON" HREF="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="teststyle.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>PC Byggaren</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
+<?php
+include_once "mysql_connect.php"
+?> 
 
 
 <!-- Hovedindex for webapplikasjon. -->
@@ -18,8 +22,8 @@ function updateProfil(){
 	document.getElementById("iframewindow").src="minprofil.php"
 }
 
-function updateProsjekt(){
-	document.getElementById("iframewindow").src="prosjekt.php"
+function updateProsjekter(){
+	document.getElementById("iframewindow").src="prosjekter.php"
 }
 
 function updateKontakt(){
@@ -46,7 +50,7 @@ function updateBygg(){
 <div class="menutop">
 	<ul>
 	<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>
-	<li class="top"><a class="menu" href="#" onclick="updateProsjekt()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
+	<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 	<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 	<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
 </ul>
@@ -74,10 +78,10 @@ function updateBygg(){
 </div>-->
 
 
-<!-- Sidemeny, ingen funksjon ennå. -->
+<!-- Sidemeny, ingen funksjon ennÃ¥. -->
 <div class="sidebar">
 	<ul>
-	<li><br>// Når logget inn:</li>
+	<li><br>Når logget inn:</li>
 	<li>Mine PC'er</li>
 	<li>Mitt galleri</li>
 	<li>Mine innlegg</li>

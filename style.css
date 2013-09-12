@@ -83,7 +83,7 @@ a.menu:hover, a.menu:active {
 	float: left;
 }
 .byggikon {	margin-left: 200px;}
-.bygglist {	list-style-type: inline;}
+#bygglist {	list-style-type: inline;}
 
 .byggimg {
 	margin-right: 80px;

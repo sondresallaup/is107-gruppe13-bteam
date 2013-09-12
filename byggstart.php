@@ -2,32 +2,43 @@
 <html>
 <head>
 <!-- class er .  id er # -->
-<link rel="stylesheet" type="text/css" href="teststyle.css">
+<LINK REL="SHORTCUT ICON" HREF="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>PC Byggaren</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
 <div id="content">
 
-<h1>Start på veiledning</h1><br>
-<p>Vennligst velg den brukerprofilen som passer deg best. </p>
+<h2 id="h1info">Start på veiledning</h1><br>
+<p id="pinfo">Vennligst velg den brukerprofilen som passer deg best. </p>
 
-<div class="bygglist">
+<div id="bygglist">
 <ul>
-		<li class="byggliste"><a href="byggstart.php"><img src="selvbyggeren.png" alt="byggikon" width="75" height="75" class="byggimg"></a></li>
-		<li class="byggliste"><a href="byggstart.php"><img src="gameren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
-		<li class="byggliste"><a href="byggstart.php"><img src="mediaguruen.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
-		<li class="byggliste"><a href="byggstart.php"><img src="nybegynneren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#" onclick="enterSelvbyggeren()"><img src="selvbyggeren.png" alt="Selvbyggeren" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#"><img src="gameren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#"><img src="mediaguruen.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#"><img src="nybegynneren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
 </ul>
 </div>
 
-
 <?php
-
-
-
+$getoptions = "mysql_query("SELECT")"
 ?>
+
+
+
+<script>
+function enterSelvbyggeren()
+	{
+	document.getElementById("h1info").innerHTML = 'Du har valgt selvbyggeren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.'
+	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br>'
+	document.getElementById("bygglist").innerHTML = '<?php echo '<form name="Hovedkort" method="get"><select id="SelectedHov"><option value="Intel">Intel</option>;' ?>'
+	}
+	
+
+</script>
 
 
 
