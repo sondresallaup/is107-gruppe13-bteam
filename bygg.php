@@ -7,7 +7,7 @@
 </head>
 
 
-<!-- Hovedfunksjonalitet p√• webapplikasjonen. √Öpnes i ny fane via index.php. 
+<!-- Hovedfunksjonalitet på webapplikasjonen. Åpnes i ny fane via index.php. 
 Kopi av meny og struktur ref index.php + intro. Funksjonalitet kommer -->
 
 
@@ -19,12 +19,12 @@ Kopi av meny og struktur ref index.php + intro. Funksjonalitet kommer -->
 <div class="infowindow">
 	
 	<h3 class="byggtekst">Bygg din PC<br></h3>
-	<p class="byggtekst">Kort introduksjon til hvordan prosessen foreg√•r og veilending <br>til hvordan oppn√•
+	<p class="byggtekst">Kort introduksjon til hvordan prosessen foregår og veilending <br>til hvordan oppnå
 	best mulig resultat med PC-byggingen.</p><br>
 	
-	<p class="byggtekst">Her kommer stort ikon for 'BEGYNN √Ö BYGG'</p><br><br>
+	<p class="byggtekst">Her kommer stort ikon for 'BEGYNN Å BYGGE'</p><br><br>
 	
-	<h4 class="byggtekst">Forms som dukker opp n√•r ikon blir klikket/evt. ny side</h4>
+	<h4 class="byggtekst">Forms som dukker opp når ikon blir klikket/evt. ny side</h4>
 	<li class="byggtekst">liste</li>
 	<li class="byggtekst">liste</li><br><br>
 
