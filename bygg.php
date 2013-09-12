@@ -19,9 +19,9 @@ Kopi av meny og struktur ref index.php + intro. Funksjonalitet kommer -->
 <!-- Hovedvindu for byggfunksjonalitet. Intro. Funksjon kommer. -->
 <div class="formwindow">
 	
-	<h3 class="byggtekst">Bygg din PC<br></h3>
-	<p class="byggtekst">Her begynner byggefunksjonen. Start byggingen ved å trykke på ikonet!</p><br><br>
-	<a href="byggstart.php"><img src="bygg.png" class="byggikon" alt="byggikon" width="300" height="100"></a>	
+		<h3 class="byggtekst">Bygg din PC<br></h3>
+		<p class="byggtekst">Her begynner byggefunksjonen. Start byggingen ved å trykke på ikonet!</p><br><br>
+		<a href="byggstart.php"><img src="bygg.png" class="byggikon" alt="byggikon" width="300" height="100"></a>	
 
 </div>
 

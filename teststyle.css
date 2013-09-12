@@ -80,4 +80,4 @@ float:left;
 background-color:grey;
 width:200px;height:600px;
 float:left;
-}.byggikon{	margin-left: 200px;}
+}.byggikon{	margin-left: 200px;}.bygglist{	list-style-type: inline;	}.byggimg {	padding:50px;}
