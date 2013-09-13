@@ -11,6 +11,8 @@
 <body>
 <div id="content">
 
+
+<!-- Start på veiledning -->
 <h2 id="h1info">Start på veiledning</h1><br>
 <p id="pinfo">Vennligst velg den brukerprofilen som passer deg best. </p>
 
