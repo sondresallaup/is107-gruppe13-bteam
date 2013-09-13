@@ -7,7 +7,7 @@
 
 
 <form 	action="kabinettdb.php" method="post">
-Grunnfunksjon med forskjellige størrelser: <br>
+		<b>Grunnfunksjon med forskjellige størrelser:</b> <br>
 		<input type="text" 	name="produsent" placeholder="produsent" size="30" /><br>
 		<input type="text" 	name="modell" placeholder="modell" /><br>
 		<input type="text" 	name="formfaktor" placeholder="formfaktor" /><br>
@@ -17,10 +17,10 @@ Grunnfunksjon med forskjellige størrelser: <br>
 		<input type="text" 	name="antallbronner" placeholder="antall fronttilgjengelige brønner" /><br>
 		<input type="text" 	name="farge" placeholder="farge" /><br>
 		<input type="text" 	name="vifter" placeholder="vifter" /><br>
-		Ekspansjon / tilkoblinger: <br>
+		<b>Ekspansjon / tilkoblinger:</b> <br>
 		<input type="text" name="ekspansjon" placeholder="ekspansjonsbrønner" /><br>
 		<input type="text" name="grensesnitt" placeholder="grensesnitt" /><br>
-		Størrelse: <br>
+		<b>Størrelse: </b><br>
 		<input type="text" name="bredde" placeholder="bredde" /><br>
 		<input type="text" name="dybde" placeholder="dybde" /><br>
 		<input type="text" name="hoyde" placeholder="høyde" /><br>
