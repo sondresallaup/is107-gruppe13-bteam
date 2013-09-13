@@ -24,7 +24,9 @@
 </div>
 
 <?php
-$getoptions = "mysql_query("SELECT")"
+$tabellhov = "mysql_query(SELECT * FROM hovedkort)";
+$anthovedkort = "mysql_num_rows($tabellhov)";
+
 ?>
 
 
@@ -33,8 +35,15 @@ $getoptions = "mysql_query("SELECT")"
 function enterSelvbyggeren()
 	{
 	document.getElementById("h1info").innerHTML = 'Du har valgt selvbyggeren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.'
-	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br>'
-	document.getElementById("bygglist").innerHTML = '<?php echo '<form name="Hovedkort" method="get"><select id="SelectedHov"><option value="Intel">Intel</option>;' ?>'
+	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br><br>'
+	document.getElementById("bygglist").innerHTML = '<?php 
+	echo '<form name="Hovedkort" method="get"><select id="SelectedHov">' .
+		 '<option value="Intel">Intel</option>' .
+		 '<option value="AMD">AMD</option>' .
+		 '<option value=""'
+			
+			
+			; ?>'
 	}
 	
 
