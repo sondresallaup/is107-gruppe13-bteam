@@ -25,31 +25,23 @@
 </ul>
 </div>
 
-<?php
-$tabellhov = "mysql_query(SELECT * FROM hovedkort)";
-$anthovedkort = "mysql_num_rows($tabellhov)";
-
-?>
-
-
-
+<div class="radio">
 <script>
 function enterSelvbyggeren()
 	{
 	document.getElementById("h1info").innerHTML = 'Du har valgt selvbyggeren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.'
 	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br><br>'
 	document.getElementById("bygglist").innerHTML = '<?php 
-	echo '<form name="Hovedkort" method="get"><select id="SelectedHov">' .
-		 '<option value="Intel">Intel</option>' .
-		 '<option value="AMD">AMD</option>' .
-		 '<option value=""'
+	echo '<form name="Hovedkort" method="get">' .
+		 '<input class="radio" type="radio" name="Hov" value="Intel">Intel<br>' .
+		 '<input class="radio" type="radio" name="Hov" value="AMD">AMD<br>' .
+		 '</form>'
 			
 			
 			; ?>'
 	}
-	
-
 </script>
+</div>
 
 
 
