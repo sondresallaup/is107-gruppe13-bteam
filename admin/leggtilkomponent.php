@@ -21,28 +21,6 @@ $(document).ready(function() {
 });
 
 </script> 
-<title>PC Byggaren</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<div id="content">
-<div class="header">	
-	<h1><a id="header" href="index.php"><abbr title="Forside">PC Byggaren</abbr></a></h1>
-</div>
-
-<div class="menutop">
-	<ul>
-	<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>
-	<li class="top"><a class="menu" href="#" onclick="updateProsjekt()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
-	<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
-	<li class="top"><a class="menu" href="bygg.php" target="_blank"><abbr title="Bygg">Bygg</abbr></a></li>
-</ul>
-</div>
-
-
-<!-- her vil hoveddelen av adminsiden ligge -->
-<div class="infowindow">
-
 <div id="container">
 
   <ul class="tabs"> 
@@ -172,25 +150,3 @@ $(document).ready(function() {
  </div> <!-- end class=tab_container --> 
 
 </div> <!-- end id=container -->	
-
-</div>
-
-<div class="sidebar">
-	<ul>
-	<li>Legg til komponenter</li><br>
-	<li>Endre/Fjerne Komponenter</li><br>
-	<li>Galleri</li><br>
-	<li>PCer</li><br>
-	<li>Innlegg</li><br>
-	<li>Instillinger</li><br>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-	<li>Logg ut</li><br>
-	</ul>
-</div>
-
-</div>
-</body>
-</html>
