@@ -1,3 +1,9 @@
+<html>
+<head>
+<meta http-equiv="Refresh" 
+ content="1; URL=leggtilkomponent.php">
+</head>
+<body>
 <?php
 
 //serverinfo
@@ -34,3 +40,6 @@ if ($result)
 	echo "feilet" . mysql_error();
 }
 ?>
+
+</body>
+</html>

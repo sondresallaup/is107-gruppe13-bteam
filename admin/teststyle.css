@@ -85,4 +85,20 @@ background-color:grey;
 width:200px;height:600px;
 float:left;
 
-}h3.byggtekst{margin-left:30px;margin-top:50px;}p.byggtekst{margin-left:30px;}h4.byggtekst{margin-left:30px;}li.byggtekst{margin-left:30px;}/* Dette er til admin siden */	/*ul.tabs {		margin: 20;		padding: 0;		float: left;		list-style: none;		height: 32px;		border-bottom: 0px solid #999999;		border-left: 1px solid #999999;		width: 100%;	}*/	ul.tabs li {		float: left;		margin: 0;		cursor: pointer;		padding: 0px 21px ;		height: 31px;		line-height: 31px;		border: 1px solid #999999;		border-left: none;		font-weight: bold;		background: #EEEEEE;		overflow: hidden;		position: relative;	}	ul.tabs li:hover {		background: #CCCCCC;	}		ul.tabs li.active{		background: #FFFFFF;		border-bottom: 1px solid #FFFFFF;	} 	.tab_container {		border: 2px solid #999999;		border-top: none;		clear: both;		float: left;		background: grey;		width: 77%;		margin-left: 40px;	} 	.tab_content {		padding-top: 40px;		padding-left: 100px;		font-size: 1.2em;		display: none; 	}	#container {		width: 800px;		margin: 0 auto;		} /* slutten på admin siden  */
+}h3.byggtekst{margin-left:30px;margin-top:50px;}p.byggtekst{margin-left:30px;}h4.byggtekst{margin-left:30px;}li.byggtekst{margin-left:30px;}/* Dette er til admin siden */	ul.tabs {		margin: 20;		padding: 0;		float: left;		list-style: none;		height: 32px;		border-bottom: 0px solid #999999;		border-left: 1px solid #999999;		width: 100%;	}	ul.tabs li {
+		width: 100;		float: none;		margin: 0;		cursor: pointer;		padding: 0px 21px ;		height: 31px;		line-height: 31px;		border: 1px solid #999999;		border-left: none;		font-weight: bold;		background: #EEEEEE;		overflow: hidden;		position: relative;	}*/	ul.tabs li:hover {		background: #CCCCCC;	}		ul.tabs li.active{		background: #FFFFFF;		border-bottom: 1px solid #FFFFFF;	} 	.tab_container {
+		text-align:center;		border: 2px solid #EEEEEE;		clear: both;		float: left;		background: #EEEEEE;		width: 75%;		margin-left: 162px;
+		margin-top: -51;	} */	.tab_content {		padding-top: 40px;		padding-left: 100px;		font-size: 1.2em;		display: none; 	}	#container {		width: 800px;		margin: 0 auto;		}
+	input[type=text] {
+		margin-top:3px;
+		margin-left:95px;
+		text-align:right;
+		width: 500;
+		height: 30; 
+		font-size: 150%;
+   } 
+   input[type=submit] {
+		margin-top:11px;
+		margin-left:496px;
+		width: 100px;
+		height: 38px;  /* slutten på admin siden  */
