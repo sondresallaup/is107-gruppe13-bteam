@@ -8,6 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
+<?php
+include_once "mysql_connect.php"
+?>
+
 
 <!-- Vises ved menyklikk "Kontakt" ref index.php, endring i source i iframe ref index.php. -->
 

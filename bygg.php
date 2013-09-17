@@ -8,6 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
+<?php
+include_once "mysql_connect.php"
+?>
 
 <!-- Hovedfunksjonalitet på webapplikasjonen. åpnes i ny fane via index.php. 
 Kopi av meny og struktur ref index.php + intro. Funksjonalitet kommer -->
