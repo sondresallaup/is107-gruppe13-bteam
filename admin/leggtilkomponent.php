@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="teststyle.css">
 <!-- jquery er et bibliotek med ferdig bygget JS kode -->
 <script type="text/javascript" src="jquery-1.10.2.min.js"></script>

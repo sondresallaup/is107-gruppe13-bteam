@@ -45,7 +45,7 @@ function updateEndre() {
 
 
 <!-- Hovedvinduet embedded via iframe. -->
-<iframe id="iframewindow" scrolling="no" src="forside.php" width="790"; height="600";></iframe>
+<iframe id="iframewindow" scrolling="no" src="admin.php" width="790"; height="600";></iframe>
 
 <!-- Sidemeny, ingen funksjon ennÃ¥. -->
 <div class="sidebar">
