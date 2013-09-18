@@ -38,28 +38,24 @@ function enterSelvbyggeren()
 	document.getElementById("h1info").innerHTML = 'Du har valgt selvbyggeren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.' <!-- Edit header -->
 	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br><br>' <!-- Edit paragraf -->
 	document.getElementById("bygglist").innerHTML = 
-	'<?php  // Echo form uten data fra mySQL, test.
-	echo '<form name="Hovedkort" method="get">' .
-		 	'<input class="radio" type="radio" name="Hov" value="Intel">Intel<br>' .
-			'<input class="radio" type="radio" name="Hov" value="AMD">AMD<br>' .
-			'</form>'
-			; ?><br><br>'
-			
-	 <?php // Prøver å echo form med data fra tabell.
-	 error_reporting("E_ALL");
-	 ini_set('display_errors', '1');
-	$hovquery= "SELECT modell FROM hovedkort";
-	$hovquery_run = "mysql_query($hovquery)";
-	$row = "mysql_fetch_assoc($hovquery_run)";
-	 while ($row = mysql_fetch_assoc($hovquery_run))
-	  		{
-    		echo '<form name="Hovedkort1" method="GET">' . 
-					'<input class="radio" value="' . $row['modell'] . '">' . $row['modell'] . ' . ' .
-    				'</form>';
-	 	 	}	
-			?>	
-	}
+		'<?php // Prøver å echo form med data fra tabell.
+		error_reporting("E_ALL");
+		ini_set('display_errors', '1');
+		$hovquery= "SELECT modell FROM hovedkort";
+		$hovquery_run = "mysql_query($hovquery)";
+		$row = "mysql_fetch_assoc($hovquery_run)";
+		if ($row)
+			{
+			echo '<form name="Hovedkort1" method="GET">' . 
+			'<input class="radio" value="'.$row['modell'].'">'.$row['modell'].' . ' .
+			'</form>';
+			}	
+		?><br><br>'
 </script>
+
+
+
+
 </div>
 
 
