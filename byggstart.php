@@ -9,7 +9,7 @@
 </head>
 
 <?php
-require_once "mysql_connect.php"
+include_once "mysql_connect.php";
 ?>
 
 <body>
@@ -22,10 +22,10 @@ require_once "mysql_connect.php"
 
 <div id="bygglist">
 <ul>
-		<li class="byggliste"><a href="#" onclick="enterSelvbyggeren()"><img src="selvbyggeren.png" alt="Selvbyggeren" width="75" height="75" class="byggimg"></a></li>
-		<li class="byggliste"><a href="#"><img src="gameren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
-		<li class="byggliste"><a href="#"><img src="mediaguruen.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
-		<li class="byggliste"><a href="#"><img src="nybegynneren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#" onclick="enterSelvbyggeren()"><img src="img/selvbyggeren.png" alt="Selvbyggeren" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#"><img src="/img/gameren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#"><img src="/img/mediaguruen.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
+		<li class="byggliste"><a href="#"><img src="/img/nybegynneren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
 </ul>
 
 </div>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <!-- class er .  id er # -->
@@ -25,7 +25,7 @@ Kopi av meny og struktur ref index.php + intro. Funksjonalitet kommer -->
 	
 		<h3 class="byggtekst">Bygg din PC<br></h3>
 		<p class="byggtekst">Her begynner byggefunksjonen. Start byggingen ved å trykke på ikonet!</p><br><br>
-		<a href="byggstart.php"><img src="bygg.png" class="byggikon" alt="byggikon" width="300" height="100"></a>	
+		<a href="byggstart.php"><img src="/img/bygg.png" class="byggikon" alt="byggikon" width="300" height="100"></a>	
 
 </div>
 
