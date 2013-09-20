@@ -9,7 +9,7 @@
 </head>
 
 <?php
-include_once "mysql_connect.php"
+require_once "mysql_connect.php"
 ?>
 
 <body>
@@ -27,6 +27,19 @@ include_once "mysql_connect.php"
 		<li class="byggliste"><a href="#"><img src="mediaguruen.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
 		<li class="byggliste"><a href="#"><img src="nybegynneren.png"  alt="byggikon" width="75" height="75" class="byggimg"></a></li>
 </ul>
+
+		<?php // Prøver å echo form med data fra tabell. Edit: Fungerer nå!.
+		$hovquery= "SELECT modell FROM hovedkort";
+		$hovquery_run = mysql_query($hovquery);
+		$row = mysql_fetch_assoc($hovquery_run);
+		while ($row = mysql_fetch_assoc($hovquery_run))
+			{
+			echo '<form name="Hovedkort1" method="GET">';
+			echo '<input type="radio" name="'.$row['modell'].'" value="'.$row['modell'].'">'.$row['modell'].'';
+			echo '</form>';
+			}	
+		?><br><br>
+
 </div>
 
 <div class="radio">
@@ -35,22 +48,10 @@ include_once "mysql_connect.php"
 <!-- Funksjon for å få forms til å dukke opp etter å ha trykket på ikon -->
 function enterSelvbyggeren()
 	{
-	document.getElementById("h1info").innerHTML = 'Du har valgt selvbyggeren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.' <!-- Edit header -->
-	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br><br>' <!-- Edit paragraf -->
-	document.getElementById("bygglist").innerHTML = 
-		'<?php // Prøver å echo form med data fra tabell.
-		error_reporting("E_ALL");
-		ini_set('display_errors', '1');
-		$hovquery= "SELECT modell FROM hovedkort";
-		$hovquery_run = "mysql_query($hovquery)";
-		$row = "mysql_fetch_assoc($hovquery_run)";
-		if ($row)
-			{
-			echo '<form name="Hovedkort1" method="GET">' . 
-			'<input class="radio" value="'.$row['modell'].'">'.$row['modell'].' . ' .
-			'</form>';
-			}	
-		?><br><br>'
+	document.getElementById("h1info").innerHTML = 'Du har valgt selvbyggeren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.'; <!-- Edit header -->
+	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br><br>'; <!-- Edit paragraf -->
+	document.getElementById("bygglist").innerHTML = '';
+	}
 </script>
 
 
