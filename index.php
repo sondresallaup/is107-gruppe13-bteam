@@ -80,7 +80,11 @@ function updateBygg(){
 
 <!-- Sidemeny, ingen funksjon ennÃ¥. -->
 <div class="sidebar">
+	<form action="login.php" method="POST">
 	<ul>
+	<li><br>Brukernavn: <input type="text" name="username">
+	<li>Passord: <input type="password" name="password">
+	
 	<li><br>Når logget inn:</li>
 	<li>Mine PC'er</li>
 	<li>Mitt galleri</li>
@@ -90,6 +94,7 @@ function updateBygg(){
 	<li>Forum</li><br><br>
 	<li>Logg ut</li>
 	</ul>
+	</form>
 </div>
 
 
