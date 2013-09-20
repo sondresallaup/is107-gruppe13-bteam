@@ -97,7 +97,7 @@ float:left;
 		height: 30; 
 		font-size: 150%;
    } 
-   input[type=submit] {
+   /*input[type=submit] {
 		margin-top:11px;
 		margin-left:496px;
 		width: 100px;

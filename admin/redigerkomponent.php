@@ -32,15 +32,40 @@ $(document).ready(function() {
 <div id="container">
 
   <ul class="tabs"> 
-        <li  rel="hovedkort"> Hovedkort</li>
+        <li class="active" rel="hovedkort"> Hovedkort</li>
         <li rel="prosessor"> Prosessor</li>
-        <li class="active" rel="skjermkort"> Skjermkort</li>
+        <li rel="skjermkort"> Skjermkort</li>
 		<li rel="psu"> PSU</li>
 		<li rel="kabinett"> Kabinett</li>
 		<li rel="minne"> Minne</li>
     </ul>
 
 <div class="tab_container"> 
+
+ <div id="hovedkort" class="tab_content"> 
+	
+<form action="sletthovedkort.php" method="POST">
+<?php
+$tabell = "hovedkort"; //tabell
+
+//hente alt fra tabell "hovedkort"
+$hent = "SELECT * FROM $tabell";
+$liste = mysql_query($hent);
+
+//skriver ut tabellen
+while($rad = mysql_fetch_assoc($liste)) {
+
+?>
+<input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" /> 
+<?php echo " <b>Produsent:</b> "; echo $rad['produsent']; echo " ";
+echo "<b>Modell:</b> "; echo $rad['modell']; echo " ";
+echo "<hr>";
+}
+
+?>
+<input type="submit" value="slett" />
+</form>
+ </div> <!-- slutt på id=hovedkort -->
 
      <div id="skjermkort" class="tab_content"> 
 	 <?php
@@ -60,32 +85,7 @@ echo "<hr>";
 
 ?>
 
- </div> <!-- end id=hovedkort -->
- 
-      <div id="hovedkort" class="tab_content"> 
-	
-<form action="sletthovedkort.php" method="post">
-<?php
-$tabell = "hovedkort"; //tabell
-
-//hente alt fra tabell "skjermkort"
-$hent = "SELECT * FROM $tabell";
-$liste = mysql_query($hent);
-
-//skriver ut tabellen
-while($rad = mysql_fetch_assoc($liste)) {
-
-
-
-echo "<input type='checkbox' name='test' /> <b>Produsent:</b> "; echo $rad['produsent']; echo " ";
-echo "<b>Modell:</b> "; echo $rad['modell']; echo " ";
-echo "<hr>";
-}
-
-?>
-<input type="submit" value="slett" />
-</form>
- </div> <!-- end id=hovedkort -->
+ </div> <!-- slutt på id=skjermkort -->
  
  <div id="minne" class="tab_content">
  

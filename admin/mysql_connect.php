@@ -2,8 +2,8 @@
 
 
 $host = "mysql23int.stwadmin.net"; 		// hostnavn
-$username = "u1010446_kennef"; 			//brukernavn
-$password = "kenneth11"; 				//database passord
+$username = "u1010446_root"; 			//brukernavn
+$password = "Bteam2013"; 				//database passord
 $db_name = "db1010446_pcbyggaren"; 		//database navn
 
 
