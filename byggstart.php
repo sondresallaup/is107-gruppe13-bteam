@@ -33,7 +33,7 @@ require_once "mysql_connect.php"
 <div class="radio">
 <script>
 <?php // Query-variabler.
-$hovquery= "SELECT modell FROM hovedkort";
+$hovquery= "SELECT * FROM hovedkort";
 $hovquery_run = mysql_query($hovquery);
 $row = mysql_fetch_assoc($hovquery_run);
 ?>
@@ -48,7 +48,7 @@ function enterSelvbyggeren()
 		while ($row = mysql_fetch_assoc($hovquery_run))
 			{
 			echo '<form name="Hovedkort1" method="GET">';
-			echo '<input type="radio" name="hovedkort" value="'.$row['modell'].'">'.$row['modell'].'<br>';
+			echo '<input type="radio" name="hovedkort" value="'.$row['modell'].'"><a href="'.$row['link'].'" target="_blank">'.$row['modell'].'</a><br>';
 			}
 		echo '</form>';
 		?><br><br>';
