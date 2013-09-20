@@ -48,9 +48,9 @@ function enterSelvbyggeren()
 		while ($row = mysql_fetch_assoc($hovquery_run))
 			{
 			echo '<form name="Hovedkort1" method="GET">';
-			echo '<input type="radio" name="'.$row['modell'].'" value="'.$row['modell'].'">'.$row['modell'].'';
-			echo '</form>';
-			}	
+			echo '<input type="radio" name="hovedkort" value="'.$row['modell'].'">'.$row['modell'].'<br>';
+			}
+		echo '</form>';
 		?><br><br>';
 	}
 </script>
