@@ -84,6 +84,7 @@ function updateBygg(){
 	<ul>
 	<li><br>Brukernavn: <input type="text" name="username">
 	<li>Passord: <input type="password" name="password">
+	<li><input type="submit" value="Logg inn">
 	
 	<li><br>Når logget inn:</li>
 	<li>Mine PC'er</li>
