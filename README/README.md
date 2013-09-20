@@ -3,6 +3,7 @@ Prosjekt laget av Gruppe 13 - BTeam:
 Emil Volckmar Ry, Kenneth Finnesand, Sondre Sallaup, Stian Killerud og Martin Othamar.
 Link: https://github.com/kennethfinnesand/is107-gruppe13-bteam/
 Kontakt: kontakt@kongeprosjekter.net
+Følg vår progresjon på http://kongeprosjekter.net/
 
 
 
