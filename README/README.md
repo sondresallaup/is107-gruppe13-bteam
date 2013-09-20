@@ -1,7 +1,9 @@
 Readme for prosjektoppgave i IS107.
 Prosjekt laget av Gruppe 13 - BTeam: 
 Emil Volckmar Ry, Kenneth Finnesand, Sondre Sallaup, Stian Killerud og Martin Othamar.
-Link: https://github.com/kennethfinnesand/is107-gruppe13-bteam/
+Link; 
+GITHUB: 	https://github.com/kennethfinnesand/is107-gruppe13-bteam/
+GoogleCode: https://code.google.com/p/is-107-gruppe13-b-team/
 Kontakt: kontakt@kongeprosjekter.net
 Følg vår progresjon på http://kongeprosjekter.net/
 
