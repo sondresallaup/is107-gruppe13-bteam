@@ -4,7 +4,7 @@
 	<!-- class er .  id er # -->
 	<LINK REL="SHORTCUT ICON" HREF="/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>PC Byggaren</title>
+	<title>PC Byggaren - TEST</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
@@ -42,7 +42,7 @@
 
 	<!-- Tittel. -->
 	<div class="header">	
-		<h1><a href="http://kongeprosjekter.net/"><abbr title="Forside">PC Byggaren</abbr></a></h1>
+		<h1><a href="http://test.kongeprosjekter.net/"><abbr title="Forside">PC Byggaren - TEST</abbr></a></h1>
 	</div>
 
 
