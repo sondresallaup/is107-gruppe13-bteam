@@ -67,29 +67,105 @@ echo "<hr>";
 </form>
  </div> <!-- slutt på id=hovedkort -->
 
-     <div id="skjermkort" class="tab_content"> 
-	 <?php
+<div id="prosessor" class="tab_content">
+	<form action="slettcpu.php" method="POST">
+<?php
+$tabell = "cpu"; //tabell
 
-$tabell = "skjermkort"; //tabell navn
-
-//hente alt fra tabell "skjermkort"
+//hente alt fra tabell
 $hent = "SELECT * FROM $tabell";
 $liste = mysql_query($hent);
 
 //skriver ut tabellen
 while($rad = mysql_fetch_assoc($liste)) {
-echo "<input type='checkbox' name='test' /> <b>Produsent:</b> "; echo $rad['produsent']; echo " ";
+
+?>
+<input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" />
+<?php echo " <b>Produsent: </b> "; echo $rad['produsent']; echo " ";
+echo "<b>Modell:</b> "; echo $rad['formfaktor']; echo " ";
+echo "<hr>";
+}
+?>
+<input type="submit" value="slett" />
+</form>
+</div> <!-- slutt på id="prosessor" -->
+ 
+     <div id="skjermkort" class="tab_content"> 
+	 <form action="slettskjermkort.php" method="POST">
+<?php
+$tabell = "skjermkort"; //tabell
+
+//hente alt fra tabell
+$hent = "SELECT * FROM $tabell";
+$liste = mysql_query($hent);
+
+//skriver ut tabellen
+while($rad = mysql_fetch_assoc($liste)) {
+
+?>
+<input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" /> 
+<?php echo " <b>Produsent:</b> "; echo $rad['produsent']; echo " ";
 echo "<b>Modell:</b> "; echo $rad['modell']; echo " ";
 echo "<hr>";
 }
 
 ?>
-
+<input type="submit" value="slett" />
+</form>
  </div> <!-- slutt på id=skjermkort -->
  
- <div id="minne" class="tab_content">
- 
+ <div id="psu" class="tab_content">
+ <p>placeholder</p>
  </div>
+ 
+ <div id="kabinett" class="tab_content">
+ <form action="slettkabinett.php" method="POST">
+ <?php
+ $tabell = "kabinett"; //tabell
+ 
+ //hente alt fra tabell
+ $hent = "SELECT * FROM $tabell";
+ $liste = mysql_query($hent);
+ 
+ //skriver ut tabellen
+ while($rad = mysql_fetch_assoc($liste)) {
+ 
+ ?>
+ <input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" />
+ <?php echo " <b>Produsent: </b>"; echo $rad['produsent']; echo " ";
+ echo "<b>Modell: </b> "; echo $rad['modell']; echo " ";
+ echo "<hr>";
+ }
+ 
+ ?>
+ <input type="submit" value="slett" />
+ </form>
+ </div> <!-- slutt på id=kabinett -->
+ 
+ <div id="minne" class="tab_content">
+ <form action="slettminne.php" method="POST">
+ <?php
+ $tabell = "minne"; //tabell
+ 
+ //hente alt fra tabell
+ $hent = "SELECT * FROM $tabell";
+ $liste = mysql_query($hent);
+ 
+ //skriver ut tabellen
+ while($rad = mysql_fetch_assoc($liste)) {
+ 
+ ?>
+ <input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" />
+ <?php echo " <b>Produsent: </b>"; echo $rad['produsent']; echo " ";
+ echo "<b> Modell: </b>"; echo $rad['modell']; echo " ";
+ echo "<hr>";
+ }
+ 
+ ?>
+ <input type="submit" value="slett" />
+ </form>
+ </div> <!-- slutt på id=minne -->
+ 
  </div> <!-- end class=tab_container --> 
 
 </div> <!-- end id=container -->	

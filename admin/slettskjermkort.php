@@ -1,10 +1,10 @@
-﻿<?php
+<?php
 include "mysql_connect.php";
 include "redigerkomponent.php";
 ?>
 
 <?php
-$tabell = "hovedkort";
+$tabell = "skjermkort";
 $id = $_POST['ch1'];
 $sql = "DELETE FROM $tabell WHERE (`$tabell`.`ID` = $id)";
         

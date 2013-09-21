@@ -66,7 +66,7 @@ $(document).ready(function() {
      </div><!-- end prosessor -->
      <div id="skjermkort" class="tab_content"> 
 
-      <form 	action="skjermkort.php" method="post">
+      <form 	action="skjermkortdb.php" method="post">
 		<input type="text" 	name="produsent" placeholder="produsent" size="30" /><br>
 		<input type="text" 	name="modell" placeholder="modell" /><br>
 		<input type="text" 	name="busstype" placeholder="busstype" /><br>
