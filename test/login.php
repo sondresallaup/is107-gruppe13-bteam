@@ -31,7 +31,7 @@ if($username&&$password){
 
 
 						}
-					else  
+					else
 						echo "Ugyldig passord";
 
 					}
