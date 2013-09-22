@@ -14,6 +14,7 @@ function logout(){
 	session_destroy();
 	$outmessage = "Du er nå logget ut";
 	$loggedin = FALSE;
+	$_SESSION['loggedin']=$loggedin;
 	}
 
 //Sjekker om brukernavn og passord er skrevet inn
@@ -36,12 +37,23 @@ if($username&&$password){
 				$dbusername = $row['username'];
 				$dbpassword = $row['password'];	
 				$dbusertype = $row['usertype'];
+				$dbfirstname = $row['firstname'];
+				$dblastname = $row['lastname'];
+				$dbemail = $row['email'];
 			}
 					//Sjekker samsvar mellom brukernavn og passord
 					if ($username==$dbusername&&$password==$dbpassword){
 						
 						$loggedin = TRUE;
 						$_SESSION['username']=$dbusername;
+						$_SESSION['loggedin']=$loggedin;
+						$_SESSION['usertype']=$dbusertype;
+						$_SESSION['firstname']=$dbfirstname;
+						$_SESSION['lastname']=$dblastname;
+						$_SESSION['email']=$dbemail;
+						
+						
+						
 						$outmessage = "Pålogget!";
 
 
@@ -100,6 +112,7 @@ if($username&&$password){
 		function updateBygg(){
 			document.getElementById("iframewindow").src="bygg.php"
 		}
+		
 	</script>
 
 
@@ -116,7 +129,8 @@ if($username&&$password){
 	<!-- Topp-menyen. Klikk menyvalg = execute funksjon for endring av iframe-source ref linje 15-27. -->
 	<div class="menutop">
 		<ul>
-			<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>
+			<?php if($loggedin) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';} 
+			if($dbusertype=="admin") {echo '<li class="top"><a class="menu" href="/admin/index.php"<abbr title="Admin">Admin</abbr></a></li>';}?>
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
@@ -137,19 +151,19 @@ if($username&&$password){
 	
 	<!-- Sidemeny -->
 	<div class="sidebar">
-		<!-- Login-input -->
-		<form method="POST" action="index.php" method="POST">
-		
 		<ul>
+		<!-- Login-input -->
+
+		<form method="POST" action="index.php" method="POST">
+			<?php if(!$loggedin): ?>
+	
 			<li><br>Brukernavn: <input type="text" name="username"></li>
 			<li>Passord: <input type="password" name="password"></li>
 			<li><input type="submit" value="Logg inn"></li>
 			<br><?php echo $outmessage; ?>
+			<?php endif; ?>
 			<!-- Innhold avhengig av innloggingsstatus -->
 			<?php if($loggedin): ?>
-			
-			<li><?php if($dbusertype=="admin") {echo "<a href='/admin/index.php'>Admin</a>";} ?></li>
-						
 			<li><br>Når logget inn:</li>
 			<li>Mine PC'er</li>
 			<li>Mitt galleri</li>
@@ -157,6 +171,7 @@ if($username&&$password){
 			<li>Instillinger</li><br>
 			<li>Upload</li>
 			<li>Forum</li><br><br>
+			<!-- Logg ut-knapp -->
 			<li><button onclick="logout()">Logg ut</button>
 			
 			<?php endif; ?>

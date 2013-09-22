@@ -20,7 +20,7 @@ include_once "mysql_connect.php"
 <body>
 <div id="content">
 
-<h1>Velkommen til PCByggaren</h1><br>
+<?php echo "<h1>Velkommen til PCByggaren, ".$_SESSION['firstname']." ".$_SESSION['lastname']."</h1><br>"; ?>
 <p>Dette er forsiden til prosjekt B-Team.<br> 
 Her kommer funksjonalitet som skal gjøre det lettere for alle å bygge sin egen <br>stasjonære PC.
 Prosjektet har en antatt ferdigstillingsdato den 30. oktober.<br>
