@@ -37,6 +37,9 @@ session_start();
 		function updateBygg(){
 			document.getElementById("iframewindow").src="bygg.php"
 		}
+		function updateRegistrering(){
+			document.getElementById("iframewindow").src="registrer.php"
+		}
 		
 	</script>
 
@@ -86,6 +89,7 @@ session_start();
 			<li>Passord: <input type="password" name="password"></li>
 			<li><input type="submit" value="Logg inn"></li>
 			<br><?php echo $outmessage; ?>
+			<li><a href="#" onclick="updateRegistrering()"> Registrér deg! </li>
 			<?php endif; ?>
 			<!-- Innhold avhengig av innloggingsstatus -->
 			<?php if($_SESSION['loggedin']): ?>

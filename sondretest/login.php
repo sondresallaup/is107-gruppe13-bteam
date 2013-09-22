@@ -4,7 +4,7 @@ session_start();
 
 
 
-$username = $_POST['username'];
+$username = strtolower($_POST['username']);
 $password = $_POST['password'];
 $loggedin = FALSE;
 $outmessage = "";
@@ -35,7 +35,7 @@ if($username&&$password){
 				$dbemail = $row['email'];
 			}
 					//Sjekker samsvar mellom brukernavn og passord
-					if ($username==$dbusername&&$password==$dbpassword){
+					if ($username==$dbusername&&md5($password)==$dbpassword){
 						
 						$loggedin = TRUE;
 						$_SESSION['username']=$dbusername;
