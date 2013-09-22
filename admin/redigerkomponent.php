@@ -1,6 +1,7 @@
 <html>
 <head>
 <?php
+session_start();
 include "mysql_connect.php";
 ?>
 <link rel="stylesheet" type="text/css" href="teststyle.css">

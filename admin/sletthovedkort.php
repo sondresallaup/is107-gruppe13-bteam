@@ -1,6 +1,7 @@
 ﻿<?php
 include "mysql_connect.php";
 include "redigerkomponent.php";
+session_start();
 ?>
 
 <?php

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php session_start(); ?>
 <head>
 <!-- class er .  id er # -->
 <LINK REL="SHORTCUT ICON" HREF="/favicon.ico" type="image/x-icon">
