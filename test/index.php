@@ -9,31 +9,35 @@ $password = $_POST['password'];
 $loggedin = FALSE;
 $outmessage = "";
 
+//Loggut-funksjon
 function logout(){
 	session_destroy();
 	$outmessage = "Du er nå logget ut";
 	$loggedin = FALSE;
 	}
 
-
+//Sjekker om brukernavn og passord er skrevet inn
 if($username&&$password){
-
+	
+	//Kobler til databasen
 	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
 	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
 
 	$query = mysql_query("SELECT * FROM users WHERE username='$username'");
 
 	$numrows = mysql_num_rows($query);
-
+		
+		//Sjekker om brukernavnet eksisterer
 		if ($numrows!=0){
 
+			//Tar ut data fra db
 			while ($row = mysql_fetch_assoc($query)){
 
 				$dbusername = $row['username'];
 				$dbpassword = $row['password'];	
 				$dbusertype = $row['usertype'];
 			}
-
+					//Sjekker samsvar mellom brukernavn og passord
 					if ($username==$dbusername&&$password==$dbpassword){
 						
 						$loggedin = TRUE;
@@ -131,8 +135,9 @@ if($username&&$password){
 	-->
 
 	
-	<!-- Sidemeny, ingen funksjon ennÃ¥. -->
+	<!-- Sidemeny -->
 	<div class="sidebar">
+		<!-- Login-input -->
 		<form method="POST" action="index.php" method="POST">
 		
 		<ul>
@@ -140,6 +145,7 @@ if($username&&$password){
 			<li>Passord: <input type="password" name="password"></li>
 			<li><input type="submit" value="Logg inn"></li>
 			<br><?php echo $outmessage; ?>
+			<!-- Innhold avhengig av innloggingsstatus -->
 			<?php if($loggedin): ?>
 			
 			<li><?php if($dbusertype=="admin") {echo "<a href='/admin/index.php'>Admin</a>";} ?></li>
