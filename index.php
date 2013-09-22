@@ -22,6 +22,11 @@ session_start();
 
 	<!-- Funksjon for endring av source i iframe. -->
 	<script>
+	
+		function updateForside(){
+			document.getElementById("iframewindow").src="forside.php"
+		}
+		
 		function updateProfil(){
 			document.getElementById("iframewindow").src="minprofil.php"
 		}
@@ -50,7 +55,7 @@ session_start();
 
 	<!-- Tittel. -->
 	<div class="header">	
-		<h1><a href="http://kongeprosjekter.net/"><abbr title="Forside">PC Byggaren</abbr></a></h1>
+		<h1><a href="#" onclick="updateForside()"><abbr title="Forside">PC Byggaren</abbr></a></h1>
 	</div>
 
 
@@ -58,7 +63,7 @@ session_start();
 	<div class="menutop">
 		<ul>
 			<?php if($_SESSION['loggedin']) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';} 
-			if($dbusertype=="admin") {echo '<li class="top"><a class="menu" href="/admin/index.php"<abbr title="Admin">Admin</abbr></a></li>';}?>
+			if($_SESSION['usertype']) {echo '<li class="top"><a class="menu" href="/admin/index.php"<abbr title="Admin">Admin</abbr></a></li>';}?>
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
@@ -88,7 +93,7 @@ session_start();
 			<li><br>Brukernavn: <input type="text" name="username"></li>
 			<li>Passord: <input type="password" name="password"></li>
 			<li><input type="submit" value="Logg inn"></li>
-			<br><?php echo $outmessage; ?>
+			<br><?php echo $_SESSION['outmessage']; ?>
 			<li><a href="#" onclick="updateRegistrering()"> Registrér deg! </li>
 			<?php endif; ?>
 			<!-- Innhold avhengig av innloggingsstatus -->

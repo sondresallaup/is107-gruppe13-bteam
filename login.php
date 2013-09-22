@@ -7,7 +7,7 @@ session_start();
 $username = strtolower($_POST['username']);
 $password = $_POST['password'];
 $loggedin = FALSE;
-$outmessage = "";
+$_SESSION['outmessage'] = "";
 
 
 //Sjekker om brukernavn og passord er skrevet inn
@@ -47,17 +47,17 @@ if($username&&$password){
 						
 						
 						
-						$outmessage = "Pålogget!";
+						$_SESSION['outmessage'] = "Pålogget!";
 
 
 						}
 					else
-						$outmessage = "Ugyldig passord";
+						$_SESSION['outmessage'] = "Ugyldig passord";
 
 					}
 
 			else
-				$outmessage = "Brukeren eksisterer ikke";
+				$_SESSION['outmessage'] = "Brukeren eksisterer ikke";
 
 
 		}

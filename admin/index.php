@@ -1,6 +1,8 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
-<?php session_start(); ?>
+
 <head>
 <!-- class er .  id er # -->
 <LINK REL="SHORTCUT ICON" HREF="/favicon.ico" type="image/x-icon">
@@ -9,6 +11,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
+
+<?php if($_SESSION['usertype']=="admin"): ?>
 
 <!-- Hovedindex for webapplikasjon. -->
 
@@ -20,6 +24,9 @@ function updateLeggTil() {
 }
 function updateEndre() {
 	document.getElementById("iframewindow").src="redigerkomponent.php"
+}
+function updateAdminEdit() {
+	document.getElementById("iframewindow").src="registrer.php"
 }
 </script>
 
@@ -53,6 +60,7 @@ function updateEndre() {
 	<ul>
 	<li><a href="#" onclick="updateLeggTil()"><abbr title="leggtil">Legg til komponenter</abbr></a></li><br>
 	<li><a href="#" onclick="updateEndre()"><abbr title="endre">Endre/Fjerne komponenter</abbr></a></li><br>
+	<li><a href="#" onclick="updateAdminEdit()"><abbr title="endre">Gjør admin</abbr></a></li><br>
 	<li>Galleri</li><br>
 	<li>PCer</li><br>
 	<li>Innlegg</li><br>
@@ -67,5 +75,7 @@ function updateEndre() {
 
 
 </div>
+
+<?php endif; ?>
 </body>
 </html>
