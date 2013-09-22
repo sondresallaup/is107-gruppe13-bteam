@@ -1,3 +1,65 @@
+<?php
+
+session_start();
+
+
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+$loggedin = FALSE;
+$outmessage = "";
+
+function logout(){
+	session_destroy();
+	$outmessage = "Du er nå logget ut";
+	$loggedin = FALSE;
+	}
+
+
+if($username&&$password){
+
+	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
+	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
+
+	$query = mysql_query("SELECT * FROM users WHERE username='$username'");
+
+	$numrows = mysql_num_rows($query);
+
+		if ($numrows!=0){
+
+			while ($row = mysql_fetch_assoc($query)){
+
+				$dbusername = $row['username'];
+				$dbpassword = $row['password'];	
+			}
+
+					if ($username==$dbusername&&$password==$dbpassword){
+						
+						$loggedin = TRUE;
+						$_SESSION['username']=$dbusername;
+						$outmessage = "Pålogget!";
+
+
+						}
+					else
+						$outmessage = "Ugyldig passord";
+
+					}
+
+			else
+				$outmessage = "Brukeren eksisterer ikke";
+
+
+		}
+
+
+
+	
+	
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +115,7 @@
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
+			<li class="login"><?php if($loggedin) {echo "Welcome ".$username;} ?> </li>
 		</ul>
 	</div>
 
@@ -69,12 +132,15 @@
 	
 	<!-- Sidemeny, ingen funksjon ennÃ¥. -->
 	<div class="sidebar">
-		<form action="login.php" method="POST">
+		<form method="POST" action="index.php" method="POST">
+		
 		<ul>
-			<li><br>Brukernavn: <input type="text" name="username">
-			<li>Passord: <input type="password" name="password">
-			<li><input type="submit" value="Logg inn">
-	
+			<li><br>Brukernavn: <input type="text" name="username"></li>
+			<li>Passord: <input type="password" name="password"></li>
+			<li><input type="submit" value="Logg inn"></li>
+			<br><?php echo $outmessage; ?>
+			<?php if($loggedin): ?>
+			
 			<li><br>Når logget inn:</li>
 			<li>Mine PC'er</li>
 			<li>Mitt galleri</li>
@@ -82,8 +148,11 @@
 			<li>Instillinger</li><br>
 			<li>Upload</li>
 			<li>Forum</li><br><br>
-			<li>Logg ut</li>
-		</ul>
+			<li><button onclick="logout()">Logg ut</button>
+			
+			<?php endif; ?>
+			
+			</ul>
 		</form>
 	</div>
 

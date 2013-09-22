@@ -45,5 +45,7 @@ if($username&&$password){
 else
 	die("Mangler brukernavn og/eller passord");
 	
+	
+	header("index.php");
 
 ?>
