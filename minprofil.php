@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +23,18 @@ include_once "mysql_connect.php"
 <body>
 <div id="content">
 
+
+<?php if($_SESSION['loggedin']){
+
+echo "<h1>".$_SESSION['firstname']." ".$_SESSION['lastname']."</h1>";
+/*
 <h1><img src="default_profile_pic.jpg" alt="Profilbildet" height="175" width="150" align="top">Navn på bruker</h1><br>
 <p>Generell brukerinfo</p>
 <p>PC Specs</p>
+*/
+
+}
+?>
 
 
 

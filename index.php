@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +37,10 @@
 		function updateBygg(){
 			document.getElementById("iframewindow").src="bygg.php"
 		}
+		function updateRegistrering(){
+			document.getElementById("iframewindow").src="registrer.php"
+		}
+		
 	</script>
 
 
@@ -49,10 +57,12 @@
 	<!-- Topp-menyen. Klikk menyvalg = execute funksjon for endring av iframe-source ref linje 15-27. -->
 	<div class="menutop">
 		<ul>
-			<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>
+			<?php if($_SESSION['loggedin']) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';} 
+			if($dbusertype=="admin") {echo '<li class="top"><a class="menu" href="/admin/index.php"<abbr title="Admin">Admin</abbr></a></li>';}?>
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
+			<li class="login"><?php if($loggedin) {echo "Welcome ".$_SESSION['username'];} ?> </li>
 		</ul>
 	</div>
 
@@ -67,14 +77,22 @@
 	-->
 
 	
-	<!-- Sidemeny, ingen funksjon ennÃ¥. -->
+	<!-- Sidemeny -->
 	<div class="sidebar">
-		<form action="login.php" method="POST">
 		<ul>
-			<li><br>Brukernavn: <input type="text" name="username">
-			<li>Passord: <input type="password" name="password">
-			<li><input type="submit" value="Logg inn">
+		<!-- Login-input -->
+
+		<form method="POST" action="login.php" method="POST">
+			<?php if(!$_SESSION['loggedin']): ?>
 	
+			<li><br>Brukernavn: <input type="text" name="username"></li>
+			<li>Passord: <input type="password" name="password"></li>
+			<li><input type="submit" value="Logg inn"></li>
+			<br><?php echo $outmessage; ?>
+			<li><a href="#" onclick="updateRegistrering()"> Registrér deg! </li>
+			<?php endif; ?>
+			<!-- Innhold avhengig av innloggingsstatus -->
+			<?php if($_SESSION['loggedin']): ?>
 			<li><br>Når logget inn:</li>
 			<li>Mine PC'er</li>
 			<li>Mitt galleri</li>
@@ -82,8 +100,14 @@
 			<li>Instillinger</li><br>
 			<li>Upload</li>
 			<li>Forum</li><br><br>
-			<li>Logg ut</li>
-		</ul>
+			<!-- Logg ut-knapp -->
+			<!-- <li><button onclick="logout()">Logg ut</button> -->
+			<li><a href="logout.php"> Logg ut </li>
+			
+			
+			<?php endif; ?>
+			
+			</ul>
 		</form>
 	</div>
 

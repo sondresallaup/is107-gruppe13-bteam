@@ -4,8 +4,7 @@ body {
 	text-align: center;
 	overflow:hidden;
 	font-family: verdana;
-}
-
+}
 
 h4 {
 	margin: 5px 0px;
@@ -14,22 +13,18 @@ h4 {
 img {
 	float: left;
 	margin: 0px 4px 4px 0px;
-}
-
+}
 
 iframe {
 	float: left;
-	margin: 0px;
-	margin-right: 10px;
+	margin: 0px;	margin-right: 10px;
 	border: none;
 	background-color: gray;
-}
-
+}
 
 li {
 	list-style-type: none;
-}
-
+}
 
 li.top {
 	display: inline;
@@ -37,12 +32,7 @@ li.top {
 	top: 15px;
 	right: 20px;
 	margin: 0px 10px;
-}
-
-li.login {
-	text-align: right;
-	}
-
+}
 
 a {
 	text-decoration: none;
@@ -54,8 +44,7 @@ a.menu:link, a.menu:visited {
 	background-color: #000000;
 	text-decoration: none;
 	font-weight: bold;
-}
-
+}
 
 a.menu:hover, a.menu:active {
 	color: #AAAAAA;
@@ -64,8 +53,7 @@ a.menu:hover, a.menu:active {
 
 #clear {
 	clear:both;
-}
-
+}
 #footer {
 	width: inherit;
 	background-color: black;
@@ -81,13 +69,11 @@ a.menu:hover, a.menu:active {
 	overflow:hidden;
 	text-align: left;
 	padding: 5px;
-}
-
+}
 
 .header {
 	text-align: center;
-}
-
+}
 
 .menutop {
 	background-color: #000000;
@@ -95,8 +81,7 @@ a.menu:hover, a.menu:active {
 	height: 50px;
 	margin: 0px 0px 20px 0px;
 	float: top;
-}
-/* styling til main vinduet etter vi har fjernet iFrame
+}/* styling til main vinduet etter vi har fjernet iFrame
 #mainwindow {
 	float: left;
 	width: 790px;
@@ -105,25 +90,14 @@ a.menu:hover, a.menu:active {
 	margin-right: 10px;
 	border: none;
 	background-color: gray;
-}*/
-
+}*/
 .sidebar {
 	background-color: grey;
-	width: 200px;
-	height: 600px;
+	width: 200px;	height: 600px;
 	float: left;
-}
-
-
-.byggikon {
-	margin-left: 200px;
-}
-
-
-#bygglist {
-	list-style-type: inline;
-}
-
+}
+.byggikon {	margin-left: 200px;}
+#bygglist {	list-style-type: inline;}
 
 .byggimg {
 	margin-right: 80px;
