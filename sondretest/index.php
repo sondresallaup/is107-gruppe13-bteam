@@ -1,81 +1,6 @@
 <?php
-
 session_start();
-
-
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-$loggedin = FALSE;
-$outmessage = "";
-
-//Loggut-funksjon
-function logout(){
-$loggedin = FALSE;
-	$_SESSION['loggedin']=$loggedin;
-	session_destroy();
-	
-	}
-
-//Sjekker om brukernavn og passord er skrevet inn
-if($username&&$password){
-	
-	//Kobler til databasen
-	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
-	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
-
-	$query = mysql_query("SELECT * FROM users WHERE username='$username'");
-
-	$numrows = mysql_num_rows($query);
-		
-		//Sjekker om brukernavnet eksisterer
-		if ($numrows!=0){
-
-			//Tar ut data fra db
-			while ($row = mysql_fetch_assoc($query)){
-
-				$dbusername = $row['username'];
-				$dbpassword = $row['password'];	
-				$dbusertype = $row['usertype'];
-				$dbfirstname = $row['firstname'];
-				$dblastname = $row['lastname'];
-				$dbemail = $row['email'];
-			}
-					//Sjekker samsvar mellom brukernavn og passord
-					if ($username==$dbusername&&$password==$dbpassword){
-						
-						$loggedin = TRUE;
-						$_SESSION['username']=$dbusername;
-						$_SESSION['loggedin']=$loggedin;
-						$_SESSION['usertype']=$dbusertype;
-						$_SESSION['firstname']=$dbfirstname;
-						$_SESSION['lastname']=$dblastname;
-						$_SESSION['email']=$dbemail;
-						
-						
-						
-						$outmessage = "Pålogget!";
-
-
-						}
-					else
-						$outmessage = "Ugyldig passord";
-
-					}
-
-			else
-				$outmessage = "Brukeren eksisterer ikke";
-
-
-		}
-
-
-
-	
-	
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -129,12 +54,12 @@ if($username&&$password){
 	<!-- Topp-menyen. Klikk menyvalg = execute funksjon for endring av iframe-source ref linje 15-27. -->
 	<div class="menutop">
 		<ul>
-			<?php if($loggedin) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';} 
+			<?php if($_SESSION['loggedin']) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';} 
 			if($dbusertype=="admin") {echo '<li class="top"><a class="menu" href="/admin/index.php"<abbr title="Admin">Admin</abbr></a></li>';}?>
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
-			<li class="login"><?php if($loggedin) {echo "Welcome ".$username;} ?> </li>
+			<li class="login"><?php if($loggedin) {echo "Welcome ".$_SESSION['username'];} ?> </li>
 		</ul>
 	</div>
 
@@ -154,8 +79,8 @@ if($username&&$password){
 		<ul>
 		<!-- Login-input -->
 
-		<form method="POST" action="index.php" method="POST">
-			<?php if(!$loggedin): ?>
+		<form method="POST" action="login.php" method="POST">
+			<?php if(!$_SESSION['loggedin']): ?>
 	
 			<li><br>Brukernavn: <input type="text" name="username"></li>
 			<li>Passord: <input type="password" name="password"></li>
@@ -163,7 +88,7 @@ if($username&&$password){
 			<br><?php echo $outmessage; ?>
 			<?php endif; ?>
 			<!-- Innhold avhengig av innloggingsstatus -->
-			<?php if($loggedin): ?>
+			<?php if($_SESSION['loggedin']): ?>
 			<li><br>Når logget inn:</li>
 			<li>Mine PC'er</li>
 			<li>Mitt galleri</li>
