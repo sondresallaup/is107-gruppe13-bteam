@@ -31,6 +31,7 @@ if($username&&$password){
 
 				$dbusername = $row['username'];
 				$dbpassword = $row['password'];	
+				$dbusertype = $row['usertype'];
 			}
 
 					if ($username==$dbusername&&$password==$dbpassword){
@@ -141,6 +142,8 @@ if($username&&$password){
 			<br><?php echo $outmessage; ?>
 			<?php if($loggedin): ?>
 			
+			<li><?php if($dbusertype=="admin") {echo "<a href='/admin/index.php'>Admin</a>";} ?></li>
+						
 			<li><br>Når logget inn:</li>
 			<li>Mine PC'er</li>
 			<li>Mitt galleri</li>
