@@ -79,7 +79,10 @@ $(document).ready(function() {
 		<input type="text" 	name="bussbredde" placeholder="bussbredde" /><br>
 		Systemkrav:<br>
 		<input type="text" 	name="stromforsyning" placeholder="krav til strømforsyning" /><br>
-		<input type="text" name="dimensjoner" placeholder="l*b*h" /><br>
+		Dimensjoner: <br>
+		<input type="text" name="lengde" placeholder="lengde" /><br>
+		<input type="text" name="bredde" placeholder="bredde" /><br>
+		<input type="text" name="hoyde" placeholder="høyde" /><br>
 		<input type="text" name="pris" placeholder="pris" /><br>
 		<input type="submit" name="add" value="Legg til" />
 </form>

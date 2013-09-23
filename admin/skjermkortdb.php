@@ -22,14 +22,16 @@ $teknologi = $_POST['teknologi'];
 $faktiskklokkehastighet= $_POST['faktiskklokkehastighet'];
 $bussbredde = $_POST['bussbredde'];
 $stromforsyning = $_POST['stromforsyning'];
-$dimensjoner = $_POST['dimensjoner'];
+$lengde = $_POST['lengde'];
+$bredde = $_POST['bredde'];
+$hoyde = $_POST['hoyde'];
 $pris = $_POST['pris'];
 
 //koble til database
 mysql_connect("$host","$username","$password")or die("cannot connect to server");
 mysql_select_db("$db_name")or die("cannot select database");
 
-$send = "INSERT INTO $tabell(produsent, modell, busstype, kjerneklokke, storrelse, teknologi, faktiskklokkehastighet, bussbredde, stromforsyning, dimensjoner, pris)VALUES('$produsent','$modell','$busstype','$kjerneklokke','$storrelse','$teknologi','$faktiskklokkehastighet','$bussbredde','$stromforsyning','$dimensjoner','$pris')";
+$send = "INSERT INTO $tabell(produsent, modell, busstype, kjerneklokke, storrelse, teknologi, faktiskklokkehastighet, bussbredde, stromforsyning, lengde, bredde, hoyde, pris)VALUES('$produsent','$modell','$busstype','$kjerneklokke','$storrelse','$teknologi','$faktiskklokkehastighet','$bussbredde','$stromforsyning','$lengde','$bredde','$hoyde','$pris')";
 
 $result = mysql_query($send) or die("cannot query");
 if ($result)
