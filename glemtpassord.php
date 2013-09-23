@@ -33,18 +33,26 @@ if($submit){
 	
 	
 	else{
+			
 			//Genererer nytt passord
 			$generatedpassword = randomPassword();
 			//krypterer nytt passord
 			$cryptgeneratedpassword = md5($generatedpassword);
-		
+	
 			$query = mysql_query("
 			UPDATE users SET password = '$cryptgeneratedpassword' WHERE email ='$email'");
+			
+			//Tar ut data fra db
+			while ($row = mysql_fetch_assoc($namecheck)){
+
+				$dbusername = $row['username'];
+			}
 			
 			//sender e-post
 			$to = $email;
 			$subject = "Nytt passord - PC-byggaren";
-			$message = "Ditt nye passord er ". $generatedpassword.". Du kan lage nytt passord i innstillinger";
+			$message = "Ditt nye passord er ". $generatedpassword.". 
+			Du kan lage nytt passord i innstillinger. Ditt brukernavn er ". $dbusername.".";
 			$from = "prosjekt.pcbyggaren@gmail.com";
 			$headers = "Fra:" . $from;
 			mail($to,$subject,$message,$headers);
