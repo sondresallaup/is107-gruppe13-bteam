@@ -45,6 +45,12 @@ session_start();
 		function updateRegistrering(){
 			document.getElementById("iframewindow").src="registrer.php"
 		}
+		function updateInnstillinger(){
+			document.getElementById("iframewindow").src="innstillinger.php"
+		}
+		function updateGlemtPassord(){
+			document.getElementById("iframewindow").src="glemtpassord.php"
+			}
 		
 	</script>
 
@@ -95,6 +101,7 @@ session_start();
 			<li><input type="submit" value="Logg inn"></li>
 			<br><?php echo $_SESSION['outmessage']; ?>
 			<li><a href="#" onclick="updateRegistrering()"> Registrér deg! </li>
+			<li><a href="#" onclick="updateGlemtPassord()"> Glemt passord? </li>
 			<?php endif; ?>
 			<!-- Innhold avhengig av innloggingsstatus -->
 			<?php if($_SESSION['loggedin']): ?>
@@ -102,7 +109,7 @@ session_start();
 			<li>Mine PC'er</li>
 			<li>Mitt galleri</li>
 			<li>Mine innlegg</li>
-			<li>Instillinger</li><br>
+			<li><a href="#" onclick="updateInnstillinger()"> Innstillinger </li>
 			<li>Upload</li>
 			<li>Forum</li><br><br>
 			<!-- Logg ut-knapp -->

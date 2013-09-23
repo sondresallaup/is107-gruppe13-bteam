@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+if($_SESSION['loggedin']){
 
 $submit = $_POST['submit'];
 
@@ -38,7 +41,7 @@ if($submit){
 		
 		
 	
-				
+	}			
 	
 	
 				
@@ -46,6 +49,8 @@ if($submit){
 
 <html>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<?php if($_SESSION['loggedin']): ?>
 
 <h1>Gjør admin</h1>
 <div>
@@ -70,4 +75,5 @@ if($submit){
 </form>
 
 </div>
+<?php endif; ?>
 </html>
