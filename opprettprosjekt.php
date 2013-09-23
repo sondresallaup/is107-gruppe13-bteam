@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 session_start();
 
 	if (!isset($_GET['submit'])){
@@ -11,6 +12,42 @@ session_start();
 		echo "</script>";
 	}
 ?>
+		<!--JS funksjoner , bør legges i egen js fil og includes -->
+<script> //funksjoner for å legge til og fjerne input felt under komponenter i formen..
+	function leggTilKomponent(){
+		var komponentdiv=document.getElementById("komponentinput");
+		var nochild=document.getElementById("nochildspan");
+		var nyinput=document.createElement("input");
+		
+		nyinput.setAttribute("type","text");
+		nyinput.setAttribute("name","nyinputelem");
+		nyinput.setAttribute("placeholder","Komponent");
+		nyinput.style.display = "block";
+		nochild.style.display = "none";
+		
+		komponentdiv.appendChild(nyinput);
+	}
+	
+	function fjernKomponent(){
+		var komponentdiv=document.getElementById("komponentinput");
+		var nochild=document.getElementById("nochildspan");
+		var lastchild=komponentdiv.lastChild;
+		
+		if (lastchild){
+			komponentdiv.removeChild(lastchild);
+			nochild.style.display = "none";
+		} else {
+			nochild.style.display = "block";
+			nochild.innerHTML = "Ingen flere felt å fjerne";
+		}
+	}
+	
+	function hideForm(){
+		var nyttprosjektform=document.getElementById("prosjektform");
+		nyttprosjektform.style.display = "none";
+	}
+	
+</script>
 
 
 <!DOCTYPE html>
@@ -37,21 +74,23 @@ include_once "mysql_connect.php"
 
 	<p><?php echo $msg ?>
 	<form action="#" method="get" id="prosjektform">
-		<input type="text" name="prosjektnavn" placeholder="Prosjektnavn" />
-		<select name="prosjektstatus">
+		<input type="text" name="prosjektnavn" placeholder="Prosjektnavn" /><br />
+		<select name="prosjektstatus"><br />
 			<option value="prosjektferdig">Ferdig</option>
 			<option value="prosjektwip" selected>Work In Progress</option>
 			<option value="prosjektide">Idé</option>
 		</select>
 		<!-- knapper i form av <a> for å legge til / fjerne felt, styles senere -->
 		<a href="#" onclick="leggTilKomponent()">Ny komponent!</a>
-		<a href="#" onclick="fjernKomponent()">Fjern komponent!</a>
-		<input type="text" name="prosjektkomponent" placeholder="Komponenter" />
-		<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> 
-		<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> 
-		<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> 
+		<a href="#" onclick="fjernKomponent()">Fjern komponent!</a><br />
+		<div id="komponentinput">
+			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
+			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
+			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
+			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
+		</div>
 		
-		<textarea name="Name" rows="10" cols="40" placeholder="Skriv litt om prosjektet" />
+		<textarea name="Name" rows="10" cols="40" placeholder="Skriv litt om prosjektet"></textarea><br />
 		
 		<input type="submit" name="prosjektsubmit">Opprett Prosjekt</input>
 		
@@ -59,42 +98,6 @@ include_once "mysql_connect.php"
 	<span id="nochildspan" style="display:none";></span>
 
 </div>
-		<!--JS funksjoner , bør legges i egen js fil og includes -->
-<script> //funksjoner for å legge til og fjerne input felt under komponenter i formen..
-	function leggTilKomponent(){
-		var nyttprosjektform=document.getElementById("prosjektform");
-		var nochild=document.getElementById("nochildspan");
-		var nyinput=document.createElement("input");
-		
-		nyinput.setAttribute("type","text");
-		nyinput.setAttribute("name","nyinputelem");
-		nyinput.setAttribute("placeholder","Komponent");
-		nyinput.style.display: "block";
-		nochild.style.display: "none";
-		
-		nyttprosjektform.appendChild(nyinput);
-	}
-	
-	function fjernKomponent(); {
-		var nyttprosjektform=document.getElementById("prosjektform");
-		var nochild=document.getElementById("nochildspan");
-		var lastchild=nyttprosjektform.lastChild;
-		
-		if (lastchild){
-			nyttprosjektform.removeChild(lastchild);
-			nochild.style.display: "none";
-		} else {
-			nochild.style.display: "block";
-			nochild.innerHTML: "Ingen flere felt å fjerne";
-		}
-	}
-	
-	function hideForm(){
-		var nyttprosjektform=document.getElementById("prosjektform);
-		nyttprosjektform.style.display = "none";
-	}
-	
-</script>
 
 </body>
 </html>
