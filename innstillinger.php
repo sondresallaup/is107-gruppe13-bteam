@@ -16,6 +16,8 @@ $newpassword = strip_tags($_POST['newpassword']);
 $repeatnewpassword = strip_tags($_POST['repeatnewpassword']);
 $currentusername = $_SESSION['username'];
 
+echo "current ".md5($currentpassword)."/";
+
 
 if($submit){
 //Kobler til databasen
@@ -24,6 +26,7 @@ if($submit){
 	
 	$namecheck = mysql_query("SELECT username FROM users WHERE username='$currentusername'");
 	$count = mysql_num_rows($namecheck);
+	
 	
 	if($count != 0&&$username!=$_SESSION['username']){
 	$outmessage = "Dette brukernavnet er opptatt";}
@@ -36,6 +39,9 @@ if($submit){
 			
 			else {
 			
+			$query = mysql_query("SELECT * FROM users WHERE username='$currentusername'");
+
+			
 			while ($row = mysql_fetch_assoc($query)){
 
 				$dbusername = $row['username'];
@@ -46,29 +52,38 @@ if($submit){
 				$dbemail = $row['email'];
 			}
 			
+			echo " db ". $dbusername;
+			
 			$query = mysql_query("
-			UPDATE users SET firstname = '$firstname' WHERE username ='$dbusertype'");
+			UPDATE users SET firstname = '$firstname' WHERE username ='$dbusername'");
 			$query = mysql_query("
-			UPDATE users SET lastname = '$lastname' WHERE username ='$dbusertype'");
+			UPDATE users SET lastname = '$lastname' WHERE username ='$dbusername'");
 			$query = mysql_query("
-			UPDATE users SET username = '$username' WHERE username ='$dbusertype'");
+			UPDATE users SET username = '$username' WHERE username ='$dbusername'");
 			$query = mysql_query("
-			UPDATE users SET email = '$email' WHERE username ='$dbusertype'");
+			UPDATE users SET email = '$email' WHERE username ='$dbusername'");
 			
 			
-			$_SESSION['firstname']=$firstname;
-			$_SESSION['lastname']=$lastname;
-			$_SESSION['username']=$username;
-			$_SESSION['email']=$email;
+			$_SESSION['firstname']=$dbfirstname;
+			$_SESSION['lastname']=$dblastname;
+			$_SESSION['username']=$dbusername;
+			$_SESSION['email']=$dbemail;
 			
 			$outmessage = "Info endret.";
 			
+				//endre passord
+			
 				if($currentpassword&&$newpassword&&$repeatnewpassword){
 					if(md5($currentpassword)==$dbpassword){
+						echo "nesten inne";
 						
 						if($newpassword==$repeatnewpassword){
+						echo " enda lengre";
+						
+						$newpassword=md5($newpassword);
+						
 						$query = mysql_query("
-			UPDATE users SET password = 'md5($password)' WHERE username ='$dbusertype'");
+			UPDATE users SET password = '$newpassword' WHERE username ='$dbusername'");
 						
 						}
 						else

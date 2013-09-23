@@ -33,6 +33,7 @@ if($username&&$password){
 				$dbfirstname = $row['firstname'];
 				$dblastname = $row['lastname'];
 				$dbemail = $row['email'];
+				$dbdate = $row['date'];
 			}
 					//Sjekker samsvar mellom brukernavn og passord
 					if ($username==$dbusername&&md5($password)==$dbpassword){
@@ -44,6 +45,7 @@ if($username&&$password){
 						$_SESSION['firstname']=$dbfirstname;
 						$_SESSION['lastname']=$dblastname;
 						$_SESSION['email']=$dbemail;
+						$_SESSION['date']=$dbdate;
 						
 						
 						
