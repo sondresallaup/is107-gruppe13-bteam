@@ -33,14 +33,24 @@ if($submit){
 	
 	
 	else{
+			//Genererer nytt passord
 			$generatedpassword = randomPassword();
-			$echomessage = $generatedpassword;
-			$generatedpassword2 = md5($generatedpassword);
+			//krypterer nytt passord
+			$cryptgeneratedpassword = md5($generatedpassword);
 		
 			$query = mysql_query("
-			UPDATE users SET password = '$generatedpassword2' WHERE email ='$email'");
+			UPDATE users SET password = '$cryptgeneratedpassword' WHERE email ='$email'");
 			
-			$outmessage = $echomessage." er ditt nye passord.";}
+			//sender e-post
+			$to = $email;
+			$subject = "Nytt passord - PC-byggaren";
+			$message = "Ditt nye passord er ". $generatedpassword.". Du kan lage nytt passord i innstillinger";
+			$from = "prosjekt.pcbyggaren@gmail.com";
+			$headers = "Fra:" . $from;
+			mail($to,$subject,$message,$headers);
+			
+			$outmessage= "Epost sendt.";
+			}
 			}
 
 		else{
