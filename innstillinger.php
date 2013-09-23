@@ -78,19 +78,22 @@ if($submit){
 			
 				if($currentpassword&&$newpassword&&$repeatnewpassword){
 					if(md5($currentpassword)==$dbpassword){
-						echo "nesten inne";
+						
+						if(strlen($newpassword)<=30&&strlen($newpassword)>=6){
 						
 						if($newpassword==$repeatnewpassword){
-						echo " enda lengre";
-						
+						//krypterer
 						$newpassword=md5($newpassword);
 						
 						$query = mysql_query("
 			UPDATE users SET password = '$newpassword' WHERE username ='$dbusername'");
+			}
+			else
+				$outmessage = "Passordene samsvarer ikke";
 						
 						}
 						else
-							$outmessage = "Passordene samsvarer ikke";
+							$outmessage = "Passordet må være mellom 6 og 30";
 						
 						
 						}
