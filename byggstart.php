@@ -54,16 +54,13 @@ function enterSelvbyggeren()
 			echo '<input type="radio" class="radio_button" name="hovedkort" value="'.$row['modell'].'"><a href="'.$row['link'].'" target="_blank">'.$row['modell'].'</a><br>';
 			}
 			?><br><br>';
-
 <!-- Lærer meg jQuery, sjekker om radio blir valgt, output valg. -->			
-	$('#Hovedkort1').click(function() 
+	$('.radio_button').change(function() 
 	{
-	var valgt=$("#Hovedkort1").find('.radio_button').val();
-		if($('.radio_button').is(':checked')) 
-		{ 
-		$("#pinfo").html("Du valgte "+valgt+". Husk at hovedkortet utgjør din basis for kompabilitet.<br>Komponenter som vises videre vil være kompatible med dette valget.<br>"); 
-		}
+	var valgt=$(this).val();
+	$("#pinfo").html("Du valgte "+valgt+". Husk at hovedkortet utgjør din basis for kompabilitet.<br>Komponenter som vises videre vil være kompatible med dette valget.<br>"); 
 	});
+	
 	
 	}
 	
