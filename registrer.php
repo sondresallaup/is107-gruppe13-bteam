@@ -53,6 +53,10 @@ if($submit){
 		
 			$query = mysql_query("
 			INSERT INTO users VALUES ('','$username','$password','$email','$firstname','$lastname','basic','$date')");
+			
+			//oppretter brukermappe
+			mkdir("/brukerfiler/brukernavn", 0700);
+			
 				
 			$outmessage = "Du er blitt registrert";}
 
