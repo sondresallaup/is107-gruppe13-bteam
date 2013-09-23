@@ -1,3 +1,11 @@
+/*
+Prøve å sortere css.. Så hvis vi skal style spesifikke elementer til enkelte sider så legger vi det samlet.
+Så blir det lettere å skille mellom generell styling på elementer på forsiden eller f.eks alle typer <li>, og 
+styling som bare skal brukes et sted/ved enkelt tilfeller. Prøver å sortere litt så ser vi om det blir mer oversiktelig.
+*/
+
+
+/*---- Generell styling forside og hovedelemeter(li, a, img og lignende) ----*/
 body {
 	margin: 0px;
 	padding: 0px;
@@ -26,6 +34,32 @@ li {
 	list-style-type: none;
 }
 
+a {
+	text-decoration: none;
+}
+
+#clear {
+	clear:both;
+}
+
+#content {
+	width: 1000px;
+	margin: 0px auto;
+	overflow:hidden;
+	text-align: left;
+	padding: 5px;
+}
+
+.header { /*Legger heading under generell styling da denne er veldig simpel enda*/
+	text-align: center;
+}
+/*----------------------------------------*/
+
+
+
+
+/*-------------Styling top meny---------- */
+
 li.top {
 	display: inline;
 	position: relative;
@@ -33,11 +67,6 @@ li.top {
 	right: 20px;
 	margin: 0px 10px;
 }
-
-a {
-	text-decoration: none;
-}
-
 
 a.menu:link, a.menu:visited {
 	color: #FFFFFF;
@@ -51,9 +80,19 @@ a.menu:hover, a.menu:active {
 	text-decoration: none;
 }
 
-#clear {
-	clear:both;
+.menutop {
+	background-color: #000000;
+	width: 1000px;
+	height: 50px;
+	margin: 0px 0px 20px 0px;
+	float: top;
 }
+/*---------------------------------------*/
+
+
+
+
+/*-------------Footer styling-------------*/
 #footer {
 	width: inherit;
 	background-color: black;
@@ -62,26 +101,11 @@ a.menu:hover, a.menu:active {
 	border-bottom-right-radius:3px;
 	border-bottom-left-radius:3px;
 }
+/*----------------------------------------*/
 
-#content {
-	width: 1000px;
-	margin: 0px auto;
-	overflow:hidden;
-	text-align: left;
-	padding: 5px;
-}
 
-.header {
-	text-align: center;
-}
 
-.menutop {
-	background-color: #000000;
-	width: 1000px;
-	height: 50px;
-	margin: 0px 0px 20px 0px;
-	float: top;
-}/* styling til main vinduet etter vi har fjernet iFrame
+/* styling til main vinduet etter vi har fjernet iFrame
 #mainwindow {
 	float: left;
 	width: 790px;
@@ -90,12 +114,23 @@ a.menu:hover, a.menu:active {
 	margin-right: 10px;
 	border: none;
 	background-color: gray;
-}*/
+}-------------------------------------------*/
+
+
+
+
+/*--------Styling til sidebare/meny---------*/
 .sidebar {
 	background-color: grey;
 	width: 200px;	height: 600px;
 	float: left;
 }
+/*-----------------------------------------*/
+
+
+
+
+/*---------Styling til byggsiden----------*/
 .byggikon {	margin-left: 200px;}
 #bygglist {	list-style-type: inline;}
 
@@ -106,7 +141,7 @@ a.menu:hover, a.menu:active {
 	height: 75px;
 }
 
-
 .radio {
 	margin-left: 50px;
 }
+/*------------------------------------------*/
