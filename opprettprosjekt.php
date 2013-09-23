@@ -1,6 +1,15 @@
 <?php
 
 session_start();
+
+	if (!isset($_GET['submit'])){
+		$msg = "Opprett ditt eget prosjekt!";
+	} else {
+		$msg = "Prosjekt opprettet -link til side-";
+		echo "<script>";
+		echo "hideForm()";
+		echo "</script>";
+	}
 ?>
 
 
@@ -26,6 +35,7 @@ include_once "mysql_connect.php"
 	<div id="content">
 	<h1>Opprett et prosjekt</h1>
 
+	<p><?php echo $msg ?>
 	<form action="#" method="get" id="prosjektform">
 		<input type="text" name="prosjektnavn" placeholder="Prosjektnavn" />
 		<select name="prosjektstatus">
@@ -49,6 +59,7 @@ include_once "mysql_connect.php"
 	<span id="nochildspan" style="display:none";></span>
 
 </div>
+		<!--JS funksjoner , bør legges i egen js fil og includes -->
 <script> //funksjoner for å legge til og fjerne input felt under komponenter i formen..
 	function leggTilKomponent(){
 		var nyttprosjektform=document.getElementById("prosjektform");
@@ -76,6 +87,11 @@ include_once "mysql_connect.php"
 			nochild.style.display: "block";
 			nochild.innerHTML: "Ingen flere felt å fjerne";
 		}
+	}
+	
+	function hideForm(){
+		var nyttprosjektform=document.getElementById("prosjektform);
+		nyttprosjektform.style.display = "none";
 	}
 	
 </script>
