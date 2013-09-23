@@ -1,6 +1,6 @@
 <html>
 <head>
-<?php //session_start(); ?>
+<?php session_start(); ?>
 <?php include "mysql_connect.php" ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
@@ -17,15 +17,15 @@
 
 //hente alt fra tabell
 $tabell = "adminvegg";
-$hent = "SELECT * FROM $tabell";
+$hent = "SELECT * FROM $tabell ORDER BY id DESC";
 $liste = mysql_query($hent);
 
 //skriver ut tabellen
 while($rad = mysql_fetch_assoc($liste)) {
 
-echo $rad['tid']; echo "<br>";
+echo $rad['bruker']; echo " postet den: "; echo $rad['tid'];  echo "<br>";
 echo $rad['melding']; echo "<br><br>";
-
+echo "<hr>";
 }
 ?>
 </div>

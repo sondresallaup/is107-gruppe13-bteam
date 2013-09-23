@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
 <meta http-equiv="Refresh" 
@@ -5,11 +6,11 @@ content="0; URL=admin.php">
 </head>
 <body>
 <?php
+
 include "mysql_connect.php";
 $meldinger = $_POST['test'];
 
-
-mysql_query("INSERT INTO 'adminvegg' ('melding') VALUES ('$meldinger')");
+mysql_query("INSERT INTO 'adminvegg' ('melding', 'bruker') VALUES ('$meldinger','$bruker')");
 
 ?>
 <?php 
@@ -31,14 +32,13 @@ if (!$result)
 
 //hente alt fra tabell
 //$hent = "SELECT * FROM $tabell ORDER BY CAST(id as SIGNED INTEGER) DESC"
-$hent = "SELECT * FROM $tabell ORDER BY id DESC";
+$hent = "SELECT * FROM $tabell";
 $liste = mysql_query($hent);
 
 //skriver ut tabellen
 while($rad = mysql_fetch_assoc($liste)) {
+echo $rad['bruker'];
 
-echo $rad['tid']; echo "<br>";
-echo $rad['melding']; echo "<br><br>";
 
 }
 ?>
