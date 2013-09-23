@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-$outmessage = "";
-
 $submit = $_POST['submit'];
 
 $firstname = strip_tags($_POST['firstname']);
@@ -16,10 +14,6 @@ $newpassword = strip_tags($_POST['newpassword']);
 $repeatnewpassword = strip_tags($_POST['repeatnewpassword']);
 $currentusername = $_SESSION['username'];
 
-echo "current ".md5($currentpassword)."/";
-
-
-if($submit){
 //Kobler til databasen
 	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
 	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
@@ -27,6 +21,32 @@ if($submit){
 	$namecheck = mysql_query("SELECT username FROM users WHERE username='$currentusername'");
 	$count = mysql_num_rows($namecheck);
 	
+	$query = mysql_query("SELECT * FROM users WHERE username='$currentusername'");
+
+			
+			while ($row = mysql_fetch_assoc($query)){
+
+				$dbusername = $row['username'];
+				$dbpassword = $row['password'];	
+				$dbusertype = $row['usertype'];
+				$dbfirstname = $row['firstname'];
+				$dblastname = $row['lastname'];
+				$dbemail = $row['email'];
+	}
+	
+	$_SESSION['username'] = $dbusername;
+	$_SESSION['usertype'] = $dbusertype;
+	$_SESSION['firstname'] = $dbfirstname;
+	$_SESSION['lastname'] = $dblastname;
+	$_SESSION['email'] = $dbemail;
+
+$outmessage = "";
+
+
+
+
+if($submit){
+
 	
 	if($count != 0&&$username!=$_SESSION['username']){
 	$outmessage = "Dette brukernavnet er opptatt";}
@@ -39,21 +59,9 @@ if($submit){
 			
 			else {
 			
-			$query = mysql_query("SELECT * FROM users WHERE username='$currentusername'");
-
 			
-			while ($row = mysql_fetch_assoc($query)){
-
-				$dbusername = $row['username'];
-				$dbpassword = $row['password'];	
-				$dbusertype = $row['usertype'];
-				$dbfirstname = $row['firstname'];
-				$dblastname = $row['lastname'];
-				$dbemail = $row['email'];
-			}
 			
-			echo " db ". $dbusername;
-			
+						
 			$query = mysql_query("
 			UPDATE users SET firstname = '$firstname' WHERE username ='$dbusername'");
 			$query = mysql_query("
@@ -64,13 +72,8 @@ if($submit){
 			UPDATE users SET email = '$email' WHERE username ='$dbusername'");
 			
 			
-			$_SESSION['firstname']=$dbfirstname;
-			$_SESSION['lastname']=$dblastname;
-			$_SESSION['username']=$dbusername;
-			$_SESSION['email']=$dbemail;
-			
 			$outmessage = "Info endret.";
-			
+			}
 				//endre passord
 			
 				if($currentpassword&&$newpassword&&$repeatnewpassword){
@@ -105,7 +108,7 @@ if($submit){
 			}
 		
 	
-	}
+	
 	else
 		$outmessage = "Vennligst fyll ut alle feltene";
 		
