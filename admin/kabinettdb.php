@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-session_start();
+
 //serverinfo
 $host = "mysql23int.stwadmin.net"; // hostnavn
 $username = "u1010446_kennef"; //brukernavn
