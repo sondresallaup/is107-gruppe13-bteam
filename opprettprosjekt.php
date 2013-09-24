@@ -11,7 +11,7 @@ session_start();
 		$msg = "Prosjekt opprettet -link til side-";
 		$pnavn = strip_tags($_GET['prosjektnavn']);
 		$pstatus = strip_tags($_GET['prosjektstatus']);
-		$pkomponent = strip_tags($_GET['pkomponentinput']);
+		$pkomponent = strip_tags($_GET['prosjektkomponent']);
 		$ptext = strip_tags($_GET['prosjekttextarea']);
 		$submit = strip_tags($_GET['submit']);
 		$tabell = "brukerprosjekt";
