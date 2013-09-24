@@ -104,7 +104,7 @@ session_start();
 			<li><input type="submit" value="Logg inn"></li>
 			<br><?php echo $_SESSION['outmessage']; ?>
 			<li><a href="#" onclick="updateRegistrering()"> Registrér deg! </li>
-			<li><a href="#" onclick="updateGlemtPassord()"> Glemt passord? </li>
+			<li><a href="#" onclick="updateGlemtPassord()"> Glemt passord? </a></li>
 			<?php endif; ?>
 			<!-- Innhold avhengig av innloggingsstatus -->
 			<?php if($_SESSION['loggedin']): ?>
