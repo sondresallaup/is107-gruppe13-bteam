@@ -38,7 +38,7 @@ $(document).ready(function() {
 
      <div id="hovedkort" class="tab_content"> 
  
-        <form 	action="hovedkort.php" method="post">
+        <form 	action="hovedkortdb.php" method="post">
 		<input type="text" 	name="produsent" placeholder="produsent" size="30" /><br>
 		<input type="text" 	name="modell" placeholder="modell" /><br>
 		<input type="text" 	name="socket" placeholder="socket" /><br>
