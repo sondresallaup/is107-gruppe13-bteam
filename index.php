@@ -54,7 +54,18 @@ session_start();
 		function updateOpprettProsjekter(){
 			document.getElementById("iframewindow").src="opprettprosjekt.php"
 		}
-		
+		function updateAdmin(){
+			document.getElementById("iframewindow").src="/admin/admin.php"
+		}
+		function updateLeggTil() {
+			document.getElementById("iframewindow").src="/admin/leggtilkomponent.php"
+		}
+		function updateEndre() {
+			document.getElementById("iframewindow").src="/admin/redigerkomponent.php"
+		}
+		function updateAdminEdit() {
+			document.getElementById("iframewindow").src="registrer.php"
+		}
 	</script>
 
 
@@ -72,7 +83,7 @@ session_start();
 	<div class="menutop">
 		<ul>
 			<?php if($_SESSION['loggedin']) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';} 
-			if($_SESSION['usertype']=="admin") {echo '<li class="top"><a class="menu" href="/admin/index.php"<abbr title="Admin">Admin</abbr></a></li>';}?>
+			if($_SESSION['usertype']=="admin") {echo '<li class="top"><a class="menu" href="#" onclick="updateAdmin()"><abbr title="Admin">Admin</abbr></a></li>';}?>
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
@@ -106,6 +117,15 @@ session_start();
 			<li><a href="#" onclick="updateRegistrering()"> Registrér deg! </li>
 			<li><a href="#" onclick="updateGlemtPassord()"> Glemt passord? </a></li>
 			<?php endif; ?>
+			
+			<?php 
+			 if($_SESSION['usertype']=="admin") 
+			{echo '<li class="top">
+			<li><a href="#" onclick="updateLeggTil()"><abbr title="leggtil">Legg til komponenter</abbr></a></li><br>
+			<li><a href="#" onclick="updateEndre()"><abbr title="endre">Endre/Fjerne komponenter</abbr></a></li><br>
+			<li><a href="#" onclick="updateAdminEdit()"><abbr title="endre">Gjør admin</abbr></a></li><br><abbr title="Admin">Admin</abbr></a></li>';}
+			?>
+			
 			<!-- Innhold avhengig av innloggingsstatus -->
 			<?php if($_SESSION['loggedin']): ?>
 			<li><br>Når logget inn:</li>
