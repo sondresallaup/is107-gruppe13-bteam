@@ -92,20 +92,18 @@ $(document).ready(function() {
       <form name="psu" action="psudb.php" method="post">
 <input type="text" name="produsent" placeholder="produsent" /><br>
 <input type="text" name="modell" placeholder="modell" /><br>
-<input type="text" name="enhetstype" placeholder="enhetstype" /><br>
 <input type="text" name="spesifikasjonssamsvar" placeholder="spesifikasjonssamsvar" /><br>
 <input type="text" name="inngangsspenning" placeholder="inngangsspenning" /><br>
-<input type="text" name="inngangsspenningsverdiområde" placeholder="inngangsspenningsverdiområde" /><br>
-<input type="text" name="frekvens" placeholder="frekvens" /><br>
-<input type="text" name="detaljer" placeholder="detaljer" /><br>
 <input type="text" name="utgangsspenning" placeholder="utgangsspenning" /><br>
 <input type="text" name="effektkapasitet" placeholder="effektkapasitet" /><br>
-<input type="text" name="utgangsstrøm" placeholder="utgangsstrøm" /><br>
+<input type="text" name="utgangsstrom" placeholder="utgangsstrøm" /><br>
 <input type="text" name="PLUSsertifisering" placeholder="PLUS-sertifisering" /><br>
-<input type="text" name="kjølesystem" placeholder="kjølesystem" /><br>
-<input type="text" name="egenskaper" placeholder="egenskaper" /><br>
-<input type="text" name="tilpassetstandard" placeholder="tilpasset standard" /><br>
-<input type="text" name="energystar" placeholder="energy star" /><br>
+<B> Størrelse og vekt: </b><br>
+<input type="text" name="bredde" placeholder="bredde" /><br>
+<input type="text" name="dybde" placeholder="dybde" /><br>
+<input type="text" name="hoyde" placeholder="høyde" /><br>
+<input type="text" name="vekt" placeholder="vekt" /><br>
+<input type="text" name="pris" placeholder="pris" /><br>
 <input type="submit" name="submit" value="Legg til	" />
 	</form> 
 	
