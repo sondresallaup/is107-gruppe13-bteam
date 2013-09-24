@@ -3,15 +3,47 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 session_start();
 
+
+
 	if (!isset($_GET['submit'])){
 		$msg = "Opprett ditt eget prosjekt!";
 	} else {
 		$msg = "Prosjekt opprettet -link til side-";
+		$pnavn = strip_tags($_GET['prosjektnavn']);
+		$pstatus = strip_tags($_GET['prosjektstatus']);
+		$pkompnent = strip_tags($_GET['pkomponentinput']);
+		$ptext = strip_tags($_GET['textprosjektarea']);
+		$submit = strip_tags($_GET['submit']);
+		$tabell = "brukerprosjekt";
+		$username = $_SESSION['username'];
+		$date = date("Y-m-d");
 		echo "<script>";
 		echo "hideForm()";
 		echo "</script>";
+		
+		if($submit){
+			if($pnavn && $pstatus && $pkomponent && $ptext){
+				$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root", "Bteam2013") or die("Kan ikke koble til");
+				mysql_select_db("db1010446_pcbyggaren") or die("Kan ikke koble til db");
+				
+				$send = "INSERT INTO $tabell VALUES('', $username, $pnavn, $pstatus, $pkomponent, $ptext, '', $date)";
+				$result= mysql_query($send) or die("Ble ikke sendt");
+				if ($result) {
+					$infomsg = "Success";
+				} else {
+					$infomsg = "Failure";
+				}
+				
+			} else {
+				$infomsg = "info msg";
+			}
+		}
 	}
 ?>
+
+
+
+
 		<!--JS funksjoner , bør legges i egen js fil og includes -->
 <script> //funksjoner for å legge til og fjerne input felt under komponenter i formen..
 	function leggTilKomponent(){
@@ -84,15 +116,15 @@ include_once "mysql_connect.php"
 		<a href="#" onclick="leggTilKomponent()">Ny komponent!</a>
 		<a href="#" onclick="fjernKomponent()">Fjern komponent!</a><br />
 		<div id="komponentinput">
-			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
-			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
-			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
-			<input type="text" name="prosjektkomponent" placeholder="Komponenter" /> <br />
+			<input type="text" name="prosjektkomponent" placeholder="Komponent" /> <br />
+			<input type="text" name="prosjektkomponent" placeholder="Komponent" /> <br />
+			<input type="text" name="prosjektkomponent" placeholder="Komponent" /> <br />
+			<input type="text" name="prosjektkomponent" placeholder="Komponent" /> <br />
 		</div>
 		
-		<textarea name="Name" rows="10" cols="40" placeholder="Skriv litt om prosjektet"></textarea><br />
+		<textarea name="prosjekttextarea" rows="10" cols="40" placeholder="Skriv litt om prosjektet"></textarea><br />
 		
-		<input type="submit" name="prosjektsubmit">Opprett Prosjekt</input>
+		<input type="submit" name="submit">Opprett Prosjekt</input>
 		
 	</form>
 	<span id="nochildspan" style="display:none";></span>
