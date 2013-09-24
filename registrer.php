@@ -20,12 +20,19 @@ if($submit){
 	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
 	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
 	
+	//sjekker om brukernavn allerede eksisterer i db
 	$namecheck = mysql_query("SELECT username FROM users WHERE username='$username'");
 	$count = mysql_num_rows($namecheck);
 	
 	if($count != 0){
 	$outmessage = "Dette brukernavnet er opptatt";}
 	
+	else{
+	//sjekker om email allerede eksisterer
+	$mailcheck = mysql_query("SELECT email FROM users WHERE email='$email'");
+	$count = mysql_num_rows($mailcheck);
+	if($count != 0){
+	$outmessage = "E-postadressen eksisterer allerde";}
 	else{
 
 	if($firstname&&$lastname&&$username&&$password&&$repeatpassword&&$email){
@@ -72,15 +79,7 @@ if($submit){
  $listephp="folder.jpg";
  $dest="./upload/$dbid/$listephp";
  mkdir("./upload/$dbid", 0777);
-echo "Mappen ble laget! <br>";
-copy ("$listephp" , "$dest");
-echo "<b> $listephp </b> <u>f</u><i>lyttet</i> til $dest";
-
-
-
-
-			
-				
+							
 			$outmessage = "Du er blitt registrert";}
 
 		else{
@@ -90,12 +89,12 @@ echo "<b> $listephp </b> <u>f</u><i>lyttet</i> til $dest";
 		}
 		
 		
-		}
-	}else
-				$outmessage = "Fyll ut alle felt";}
+		}}
+	else
+				$outmessage = "Fyll ut alle felt";}}
 	
-	
-				}
+	}
+				
 ?>
 
 <html>
