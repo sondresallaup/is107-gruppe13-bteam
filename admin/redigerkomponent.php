@@ -129,8 +129,8 @@ while($rad = mysql_fetch_assoc($liste)) {
 
 ?>
 <input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" /> 
-<?php echo " <b>Produsent:</b> "; echo $rad['produsent']; echo " ";
-echo "<b>Modell:</b> "; echo $rad['modell']; echo " ";
+<?php echo " <b>Produsent:</b> "; echo $rad['Produsent']; echo " ";
+echo "<b>Modell:</b> "; echo $rad['Modell']; echo " ";
 echo "<hr>";
 }
 
