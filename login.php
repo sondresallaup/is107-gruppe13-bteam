@@ -27,6 +27,7 @@ if($username&&$password){
 			//Tar ut data fra db
 			while ($row = mysql_fetch_assoc($query)){
 
+				$dbid = $row['id'];
 				$dbusername = $row['username'];
 				$dbpassword = $row['password'];	
 				$dbusertype = $row['usertype'];
@@ -39,6 +40,7 @@ if($username&&$password){
 					if ($username==$dbusername&&md5($password)==$dbpassword){
 						
 						$loggedin = TRUE;
+						$_SESSION['id']=$dbid;
 						$_SESSION['username']=$dbusername;
 						$_SESSION['loggedin']=$loggedin;
 						$_SESSION['usertype']=$dbusertype;

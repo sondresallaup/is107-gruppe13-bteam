@@ -47,7 +47,7 @@ if($submit){
 			
 		else{
 		
-		
+
 		if($password==$repeatpassword){
 		
 		
