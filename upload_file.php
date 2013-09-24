@@ -25,16 +25,10 @@ if ((($_FILES["file"]["type"] == "image/gif")
     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
 
-    if (file_exists("upload/" .$_SESSION['id']. "/"  ."profilbilde.jpg"))
-      {
-      echo $_FILES["file"]["name"] . " already exists. ";
-      }
-    else
-      {
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "upload/" . $_SESSION['id']. "/"  ."profilbilde.jpg");
       echo "Stored in: " . "upload/" . $_SESSION['id']. "/" ."profilbilde.jpg";
-      }
+      
     }
   }
 else
