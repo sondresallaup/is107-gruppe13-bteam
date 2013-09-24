@@ -55,7 +55,24 @@ if($submit){
 			INSERT INTO users VALUES ('','$username','$password','$email','$firstname','$lastname','basic','$date')");
 			
 			//oppretter brukermappe
-			mkdir("/brukerfiler/brukernavn", 0700);
+/*
+ * Created on 24. sep. 2013
+ *
+ * To change the template for this generated file go to
+ * Window - Preferences - PHPeclipse - PHP - Code Templates
+ */
+
+ $listephp="folder.jpg";
+ $dest="./upload/$username/$listephp";
+ mkdir("./upload/$username", 0777);
+echo "Mappen ble laget! <br>";
+copy ("$listephp" , "$dest");
+echo "<b> $listephp </b> <u>f</u><i>lyttet</i> til $dest";
+echo "er dette irriterende Â lese, Sondre?";
+
+
+
+
 			
 				
 			$outmessage = "Du er blitt registrert";}
