@@ -129,6 +129,14 @@ if($submit){
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<h1>Innstillinger</h1>
 	<div>
+	
+	
+	<form action="upload_file.php" method="post"
+enctype="multipart/form-data">
+<label for="file">Nytt profilbilde:</label>
+<input type="file" name="file" id="file"><br>
+<input type="submit" name="submit" value="Lagre">
+</form>
 
 <form action='innstillinger.php' method='POST'>
 
