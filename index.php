@@ -52,7 +52,7 @@ session_start();
 			document.getElementById("iframewindow").src="glemtpassord.php"
 			}
 		function updateOpprettProsjekter(){
-			document.getElementById("iframewindow").src="opprettprosjekter.php"
+			document.getElementById("iframewindow").src="opprettprosjekt.php"
 		}
 		
 	</script>
