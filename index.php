@@ -51,8 +51,8 @@ session_start();
 		function updateGlemtPassord(){
 			document.getElementById("iframewindow").src="glemtpassord.php"
 			}
-		function updateMineProsjekter(){
-			document.getElementById("iframewindow").src="mineprosjekter.php"
+		function updateOpprettProsjekter(){
+			document.getElementById("iframewindow").src="opprettprosjekter.php"
 		}
 		
 	</script>
@@ -111,7 +111,7 @@ session_start();
 			<li><br>Når logget inn:</li>
 			<li>Mine PC'er</li>
 			<li>Mitt galleri</li>
-			<li><a href="#" onclick="updateMineProsjekter()"> Mine prosjekter</li>
+			<li><a href="#" onclick="updateOpprettProsjekter()"> Opprett prosjekter</li>
 			<li><a href="#" onclick="updateInnstillinger()"> Innstillinger </li>
 			<li>Upload</li>
 			<li>Forum</li><br><br>
