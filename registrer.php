@@ -50,9 +50,16 @@ if($submit){
 
 		if($password==$repeatpassword){
 		
-		
+			//Setter ny bruker inn i db
 			$query = mysql_query("
 			INSERT INTO users VALUES ('','$username','$password','$email','$firstname','$lastname','basic','$date')");
+			
+			$queryselect = mysql_query("SELECT * FROM users WHERE username='$username'");
+			
+			//Tar ut data fra db
+			while ($row = mysql_fetch_assoc($queryselect)){
+
+				$dbid = $row['id']; }
 			
 			//oppretter brukermappe
 /*
@@ -63,12 +70,11 @@ if($submit){
  */
 
  $listephp="folder.jpg";
- $dest="./upload/$username/$listephp";
- mkdir("./upload/$username", 0777);
+ $dest="./upload/$dbid/$listephp";
+ mkdir("./upload/$dbid", 0777);
 echo "Mappen ble laget! <br>";
 copy ("$listephp" , "$dest");
 echo "<b> $listephp </b> <u>f</u><i>lyttet</i> til $dest";
-echo "er dette irriterende Â lese, Sondre?";
 
 
 
