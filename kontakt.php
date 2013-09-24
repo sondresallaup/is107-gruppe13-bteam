@@ -35,17 +35,35 @@ Send oss en mail via skjemaet under<br> dersom du har spørsmål eller ønsker �
 <!-- Kontaktform, sendes mail til adresse oppgitt i mail-funksjon ref linje 33. -->
 <?php
 // Hvis form er fylt ut, execute PHP-kode for mail.
-if (isset($_REQUEST['epost']))
-	{
+if (isset($_REQUEST['epost'])) {
+	
+	if(!$_SESSION['loggedin']){
 	$navn = $_REQUEST['navn'];
 	$epost = $_REQUEST['epost'];
+	}
+	else{
+	$navn = $_SESSION['username'];
+	$epost = $_SESSION['email']; }
+	
 	$emne = $_REQUEST['emne'];
 	$melding = $_REQUEST['melding'];
 	$fra = "From: $epost";
-	mail("prosjekt.pcbyggaren@gmail.com", $emne,
+	mail("kontakt@kongeprosjekter.net", $emne,
 	$melding, $fra);
 	echo "Takk for at du brukte tjenesten vår, $navn.";
 	}
+else if($_SESSION['loggedin']){
+	echo "<form method='post' action='kontakt.php'>
+	Emne: <br><input name='emne' type='text'><br>
+	Melding:<br>
+	<textarea name='melding' rows='15' cols='40'>
+	</textarea><br>
+	<input type='submit'>
+	</form>";
+	}
+
+
+
 else
 // Hvis ikke, echo form i html. Kilde: http://www.w3schools.com/php/php_mail.asp
 	{
