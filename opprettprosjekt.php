@@ -5,40 +5,16 @@ session_start();
 
 
 
-	if (!isset($_GET['submit'])){
-		$msg = "Opprett ditt eget prosjekt!";
-	} else {
-		$msg = "Prosjekt opprettet -link til side-";
-		$pnavn = strip_tags($_GET['prosjektnavn']);
-		$pstatus = strip_tags($_GET['prosjektstatus']);
-		$pkomponent = strip_tags($_GET['prosjektkomponent']);
-		$ptext = strip_tags($_GET['prosjekttextarea']);
-		$submit = strip_tags($_GET['submit']);
-		$tabell = "brukerprosjekt";
-		$username = $_SESSION['username'];
-		$date = date("Y-m-d");
-		echo "<script>";
-		echo "hideForm()";
-		echo "</script>";
-		
-		if($submit){
-			if($pnavn && $pstatus && $pkomponent && $ptext){
-				$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root", "Bteam2013") or die("Kan ikke koble til");
-				mysql_select_db("db1010446_pcbyggaren") or die("Kan ikke koble til db");
-				
-				$send = "INSERT INTO $tabell VALUES('', $username, $pnavn, $pstatus, $pkomponent, $ptext, '', $date)";
-				$result= mysql_query($send) or die("Ble ikke sendt");
-				if ($result) {
-					$infomsg = "Success";
-				} else {
-					$infomsg = "Failure";
-				}
-				
-			} else {
-				$infomsg = "info msg";
-			}
-		}
-	}
+
+	
+	$id = $_SESSION['id'];
+	$file = file_get_contents('./prosjektinfo.php', true);
+ 
+	$fp = fopen("./brukerfiler/$id/prosjektinfo.php","w+");
+ 
+ fwrite($fp, $file);
+ fclose($fp);
+
 ?>
 
 
@@ -104,8 +80,7 @@ include_once "mysql_connect.php"
 	<div id="content">
 	<h1>Opprett et prosjekt</h1>
 
-	<p><?php echo $msg ?>
-	<form action="#" method="get" id="prosjektform">
+	<form action="prosjektinfo.php" method="get" id="prosjektform">
 		<input type="text" name="prosjektnavn" placeholder="Prosjektnavn" /><br />
 		<select name="prosjektstatus"><br />
 			<option value="prosjektferdig">Ferdig</option>
