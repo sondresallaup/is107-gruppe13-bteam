@@ -66,6 +66,9 @@ session_start();
 		function updateAdminEdit() {
 			document.getElementById("iframewindow").src="registrer.php"
 		}
+		function updateSearch() {
+			document.getElementById("iframewindow").src="search.php"
+		}
 	</script>
 
 
@@ -87,7 +90,6 @@ session_start();
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateBygg()""><abbr title="Bygg">Bygg</abbr></a></li>
-			<li class="login"><?php if($loggedin) {echo "Welcome ".$_SESSION['username'];} ?> </li>
 		</ul>
 	</div>
 
@@ -105,6 +107,12 @@ session_start();
 	<!-- Sidemeny -->
 	<div class="sidebar">
 		<ul>
+		<!-- Search-input -->
+		<form method="POST" action="search.php" method="POST">
+			<li><br><input type="text" name="search"></li>
+			<li><input type="submit" value="søk"></li>
+		</form>
+		
 		<!-- Login-input -->
 
 		<form method="POST" action="login.php" method="POST">

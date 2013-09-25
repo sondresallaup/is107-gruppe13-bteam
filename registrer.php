@@ -80,7 +80,7 @@ if($submit){
  mkdir("./brukerfiler/$dbid", 0777);
  
  //Setter standardprofilbilde
- copy("profilbilde.png","./brukerfiler/$dbid/profilbilde.png");
+ copy("profilbilde.png","./brukerfiler/$dbid/profilbilde.jpg");
  
  //Oppretter egen brukerprofil ' '.
  $file = '<?php
