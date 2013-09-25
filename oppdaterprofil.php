@@ -17,12 +17,14 @@ if($_SESSION['loggedin']){
  
  //Oppretter egen brukerprofil ' '.
  $file = '<?php
-$id = '.$dbid.';'.file_get_contents('./profil.php', true);
+$id = '.$id.';'.file_get_contents('./profil.php', true);
  
  $fp = fopen("./brukerfiler/$id/profil.php","w+");
  
  fwrite($fp, $file);
  fclose($fp);
+ 
+ echo "Gratulerer! Du har nå oppdatert brukerprofil";
 	
 	}
 

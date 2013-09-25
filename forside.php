@@ -21,7 +21,7 @@ include_once "mysql_connect.php"
 <body>
 <div id="content">
 
-<?php echo "<h1>Velkommen til PCByggaren, ".$_SESSION['firstname']." ".$_SESSION['lastname']."</h1><br>"; 
+<?php echo "<h1>Velkommen til PCByggaren, <br>".$_SESSION['firstname']." ".$_SESSION['lastname']."</h1><br>"; 
 
 if($_SESSION['loggedin']){
 	if($_SESSION['id']<52){
