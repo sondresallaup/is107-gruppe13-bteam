@@ -79,6 +79,9 @@ if($submit){
  $dest="./brukerfiler/$dbid/$listephp";
  mkdir("./brukerfiler/$dbid", 0777);
  
+ //Setter standardprofilbilde
+ copy("profilbilde.png","./brukerfiler/$dbid/profilbilde.png");
+ 
  //Oppretter egen brukerprofil ' '.
  $file = '<?php
 $id = '.$dbid.';'.file_get_contents('./profil.php', true);
