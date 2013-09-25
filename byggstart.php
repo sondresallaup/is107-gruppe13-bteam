@@ -53,7 +53,7 @@ function enterSelvbyggeren()
 	}
 
 
-<?php // Query-variabler. SELVBYGGER
+<?php // Query-variabler. GAMER
 $hovquery= "SELECT * FROM hovedkort";
 $hovquery_run = mysql_query($hovquery);
 $row = mysql_fetch_assoc($hovquery_run);
@@ -83,7 +83,7 @@ function enterGameren()
 	}
 	
 	
-<?php // Query-variabler. SELVBYGGER
+<?php // Query-variabler. MEDIAGURUEN
 $hovquery= "SELECT * FROM hovedkort";
 $hovquery_run = mysql_query($hovquery);
 $row = mysql_fetch_assoc($hovquery_run);
@@ -113,7 +113,7 @@ function enterMediaguruen()
 	}
 	
 	
-<?php // Query-variabler. SELVBYGGER
+<?php // Query-variabler. NYBEGYNNEREN
 $hovquery= "SELECT * FROM hovedkort";
 $hovquery_run = mysql_query($hovquery);
 $row = mysql_fetch_assoc($hovquery_run);
