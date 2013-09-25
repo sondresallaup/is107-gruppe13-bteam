@@ -53,7 +53,11 @@ function enterSelvbyggeren()
 	}
 
 
-
+<?php // Query-variabler. SELVBYGGER
+$hovquery= "SELECT * FROM hovedkort";
+$hovquery_run = mysql_query($hovquery);
+$row = mysql_fetch_assoc($hovquery_run);
+?>
 function enterGameren()
 	{
 	document.getElementById("h1info").innerHTML = 'Du har valgt gameren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.'; <!-- Edit header -->
@@ -79,7 +83,11 @@ function enterGameren()
 	}
 	
 	
-	
+<?php // Query-variabler. SELVBYGGER
+$hovquery= "SELECT * FROM hovedkort";
+$hovquery_run = mysql_query($hovquery);
+$row = mysql_fetch_assoc($hovquery_run);
+?>	
 function enterMediaguruen()
 	{
 	document.getElementById("h1info").innerHTML = 'Du har valgt mediaguruen,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.'; <!-- Edit header -->
@@ -105,11 +113,15 @@ function enterMediaguruen()
 	}
 	
 	
-	
+<?php // Query-variabler. SELVBYGGER
+$hovquery= "SELECT * FROM hovedkort";
+$hovquery_run = mysql_query($hovquery);
+$row = mysql_fetch_assoc($hovquery_run);
+?>	
 function enterNybegynneren()
 	{
 	document.getElementById("h1info").innerHTML = 'Du har valgt nybegynneren,<br>du vil nå få tilgang til et bredt utvalg <br>av komponenter.'; <!-- Edit header -->
-	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br> Ved dette profilvalget vil vi prioritere simpelhet og veiledning slik at du på lettest mulig måte kan bygge en PC.<br><br>'; <!-- Edit paragraf -->
+	document.getElementById("pinfo").innerHTML = 'Se forms nedenfor for komplett komponentseleksjon.<br> Ved dette profilvalget vil vi prioritere simpelhet og veiledning slik at du på lettest mulig <br>måte kan bygge en PC.<br><br>'; <!-- Edit paragraf -->
 	document.getElementById("bygglist").innerHTML = '<?php //Display mysqldata til radio buttons.
 		while ($row = mysql_fetch_assoc($hovquery_run))
 			{
