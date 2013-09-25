@@ -69,6 +69,9 @@ session_start();
 		function updateSearch() {
 			document.getElementById("iframewindow").src="search.php"
 		}
+		function updateMeldinger() {
+			document.getElementById("iframewindow").src="meldinger.php"
+		}
 	</script>
 
 
@@ -85,7 +88,8 @@ session_start();
 	<!-- Topp-menyen. Klikk menyvalg = execute funksjon for endring av iframe-source ref linje 15-27. -->
 	<div class="menutop">
 		<ul>
-			<?php if($_SESSION['loggedin']) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';} 
+			<?php if($_SESSION['loggedin']) {echo '<li class="top"><a class="menu" href="#" onclick="updateProfil()"><abbr title="Min Profil">Min Profil</abbr></a></li>';
+			echo '<li class="top"><a class="menu" href="#" onclick="updateMeldinger()"><abbr title="Meldinger">Meldinger</abbr></a></li>';} 
 			if($_SESSION['usertype']=="admin") {echo '<li class="top"><a class="menu" href="#" onclick="updateAdmin()"><abbr title="Admin">Admin</abbr></a></li>';}?>
 			<li class="top"><a class="menu" href="#" onclick="updateProsjekter()"><abbr title="Prosjekter">Prosjekter</abbr></a></li>
 			<li class="top"><a class="menu" href="#" onclick="updateKontakt()"><abbr title="Kontakt">Kontakt</abbr></a></li>
