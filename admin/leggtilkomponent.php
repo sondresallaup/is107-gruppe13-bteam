@@ -4,25 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="teststyle.css">
 <!-- jquery er et bibliotek med ferdig bygget JS kode -->
-<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- Javascript koden som lager fanene -->
 <!-- http://www.entheosweb.com/tutorials/css/tabs.asp -->
-<script type="text/javascript">
-$(document).ready(function() {
-
-	$(".tab_content").hide();
-	$(".tab_content:first").show(); 
-
-	$("ul.tabs li").click(function() {
-		$("ul.tabs li").removeClass("active");
-		$(this).addClass("active");
-		$(".tab_content").hide();
-		var activeTab = $(this).attr("rel"); 
-		$("#"+activeTab).fadeIn(); 
-	});
-});
-
-</script> 
+<script type="text/javascript" src="script.js"></script> 
 <div id="container">
 
   <ul class="tabs"> 
