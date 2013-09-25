@@ -1,6 +1,7 @@
 <?php
 
-session_start(); ?>
+session_start();
+ ?>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,17 @@ include_once "mysql_connect.php"
 <body>
 <div id="content">
 
-<?php echo "<h1>Velkommen til PCByggaren, ".$_SESSION['firstname']." ".$_SESSION['lastname']."</h1><br>"; ?>
+<?php echo "<h1>Velkommen til PCByggaren, ".$_SESSION['firstname']." ".$_SESSION['lastname']."</h1><br>"; 
+
+if($_SESSION['loggedin']){
+	if($_SESSION['id']<52){
+	echo '<a>Vi har oppdatert brukerprofilen. Klikk <a href="oppdaterprofil.php">her for å oppdatere</a>';}
+
+}
+?>
+
+
+
 <p>Dette er forsiden til prosjekt B-Team.<br> 
 Her kommer funksjonalitet som skal gjøre det lettere for alle å bygge sin egen <br>stasjonære PC.
 Prosjektet har en antatt ferdigstillingsdato den 30. oktober.<br>
