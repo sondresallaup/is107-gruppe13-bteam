@@ -109,6 +109,7 @@ session_start();
 		<ul>
 		<!-- Search-input -->
 		<form method="POST" action="search.php" method="POST">
+			<li>Søk etter bruker (brukernavn kun støttet til nå)</li>
 			<li><br><input type="text" name="search"></li>
 			<li><input type="submit" value="søk"></li>
 		</form>
