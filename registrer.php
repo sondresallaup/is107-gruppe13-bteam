@@ -1,5 +1,9 @@
 <?php
-
+/*
+# Enable Error Reporting and Display:
+error_reporting(~0);
+ini_set('display_errors', 1);
+*/
 $submit = $_POST['submit'];
 
 $firstname = strip_tags($_POST['firstname']);
@@ -69,16 +73,21 @@ if($submit){
 				$dbid = $row['id']; }
 			
 			//oppretter brukermappe
-/*
- * Created on 24. sep. 2013
- *
- * To change the template for this generated file go to
- * Window - Preferences - PHPeclipse - PHP - Code Templates
- */
+
 
  $listephp="folder.jpg";
- $dest="./upload/$dbid/$listephp";
- mkdir("./upload/$dbid", 0777);
+ $dest="./brukerfiler/$dbid/$listephp";
+ mkdir("./brukerfiler/$dbid", 0777);
+ 
+ //Oppretter egen brukerprofil ' '.
+ $file = '<?php
+$id = '.$dbid.';'.file_get_contents('./profil.php', true);
+ 
+ $fp = fopen("./brukerfiler/$dbid/profil.php","w+");
+ 
+ fwrite($fp, $file);
+ fclose($fp);
+ 
 							
 			$outmessage = "Du er blitt registrert";}
 

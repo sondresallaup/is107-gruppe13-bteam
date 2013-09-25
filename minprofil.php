@@ -31,7 +31,7 @@ echo "<p>E-post-adresse: ".$_SESSION['email']."<br>
 	Brukernavn: ".$_SESSION['username']."<br>
 	Medlem siden ".$_SESSION['date']."<br>";
 	
-	echo '<img src="upload/'.$_SESSION['id'].'/profilbilde.jpg" border=0>';
+	echo '<img src="brukerfiler/'.$_SESSION['id'].'/profilbilde.jpg" border=0 with="200" height="200">';
 	
 /*
 <h1><img src="default_profile_pic.jpg" alt="Profilbildet" height="175" width="150" align="top">Navn på bruker</h1><br>

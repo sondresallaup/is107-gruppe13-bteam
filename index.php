@@ -28,7 +28,7 @@ session_start();
 		}
 		
 		function updateProfil(){
-			document.getElementById("iframewindow").src="minprofil.php"
+			document.getElementById("iframewindow").src="brukerfiler/<?php echo $_SESSION['id']; ?>/profil.php"
 		}
 
 		function updateProsjekter(){

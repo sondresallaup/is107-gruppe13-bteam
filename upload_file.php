@@ -26,8 +26,8 @@ if ((($_FILES["file"]["type"] == "image/gif")
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
 
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "upload/" . $_SESSION['id']. "/"  ."profilbilde.jpg");
-      echo "Stored in: " . "upload/" . $_SESSION['id']. "/" ."profilbilde.jpg";
+      "brukerfiler/" . $_SESSION['id']. "/"  ."profilbilde.jpg");
+      echo "Stored in: " . "brukerfiler/" . $_SESSION['id']. "/" ."profilbilde.jpg";
       
     }
   }
