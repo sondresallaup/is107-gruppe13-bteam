@@ -64,7 +64,7 @@ session_start();
 			document.getElementById("iframewindow").src="/admin/redigerkomponent.php"
 		}
 		function updateAdminEdit() {
-			document.getElementById("iframewindow").src="registrer.php"
+			document.getElementById("iframewindow").src="/admin/registrer.php"
 		}
 		function updateSearch() {
 			document.getElementById("iframewindow").src="search.php"
