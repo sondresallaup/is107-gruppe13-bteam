@@ -3,7 +3,7 @@
 <?php
 include "mysql_connect.php";
 ?>
-<link rel="stylesheet" type="text/css" href="teststyle.css">
+<link rel="stylesheet" type="text/css" href="adminstil.css">
 <!-- jquery er et bibliotek med ferdig bygget JS kode -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- Javascript koden som lager fanene -->
