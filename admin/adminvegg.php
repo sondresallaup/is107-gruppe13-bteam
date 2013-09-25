@@ -9,9 +9,7 @@ content="0; URL=admin.php">
 
 include "mysql_connect.php";
 $meldinger = $_POST['test'];
-//$usr = $_SESSION['username'];
-
-mysql_query("INSERT INTO 'adminvegg' ('melding', 'bruker') VALUES ('$meldinger','$usr')");
+$usr = $_SESSION['username'];
 
 ?>
 <?php 
@@ -19,7 +17,7 @@ $tabell = "adminvegg"; //tabell
 
 //koble til database
 
-$send = "INSERT INTO $tabell(melding)VALUES('$meldinger')";
+$send = "INSERT INTO $tabell(melding, bruker)VALUES('$meldinger','$usr')";
 
 $result = mysql_query($send) or die("cannot query");
 if (!$result)
@@ -32,7 +30,6 @@ if (!$result)
 
 
 //hente alt fra tabell
-//$hent = "SELECT * FROM $tabell ORDER BY CAST(id as SIGNED INTEGER) DESC"
 $hent = "SELECT * FROM $tabell";
 $liste = mysql_query($hent);
 
