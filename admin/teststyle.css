@@ -101,4 +101,9 @@ float:left;
 		margin-top:11px;
 		margin-left:496px;
 		width: 100px;
-		height: 38px;  /* slutten på admin siden  */
+		height: 38px;
+	*/	
+	.scrollbar {
+	height:460px;
+	border:0px solid #ccc;
+	overflow:auto;"  /* slutten på admin siden  */

@@ -9,8 +9,9 @@ content="0; URL=admin.php">
 
 include "mysql_connect.php";
 $meldinger = $_POST['test'];
+//$usr = $_SESSION['username'];
 
-mysql_query("INSERT INTO 'adminvegg' ('melding', 'bruker') VALUES ('$meldinger','$bruker')");
+mysql_query("INSERT INTO 'adminvegg' ('melding', 'bruker') VALUES ('$meldinger','$usr')");
 
 ?>
 <?php 

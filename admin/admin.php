@@ -1,7 +1,10 @@
+﻿<?php 
+session_start(); 
+include "mysql_connect.php"
+?>
 <html>
 <head>
-<?php session_start(); ?>
-<?php include "mysql_connect.php" ?>
+<link type="text/css" href="teststyle.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
@@ -10,7 +13,7 @@
 <form action="adminvegg.php" method="post" >
 <textarea name="test" rows="5" cols="50" required maxlength="255"></textarea><br>
 <input type="submit" value="post" /><br><br>
-<div class="scrollbar" style="height:460px;;border:0px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+<div class="scrollbar">
 
 <?php
 
