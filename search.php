@@ -9,7 +9,7 @@ if($search){
 	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
 	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
 
-	$query = mysql_query("SELECT * FROM users WHERE username='$search'");
+	$query = mysql_query("SELECT * FROM users WHERE username ='$search'");
 
 	$numrows = mysql_num_rows($query);
 	
@@ -17,13 +17,14 @@ if($search){
 		if ($numrows!=0){
 
 			//Tar ut data fra db
+			
 			while ($row = mysql_fetch_assoc($query)){
 
 				$dbid = $row['id'];
 				$dbusername = $row['username'];
 				$dbfirstname = $row['firstname'];
 				$dblastname = $row['lastname'];
-				$dbemail = $row['email'];
+				$dbemail = $row['email'];				
 			}
 			$outmessage = "<a href='brukerfiler/".$dbid."/profil.php'>".$dbusername. " - ". $dbfirstname." ".$dblastname."</a>";
 			}

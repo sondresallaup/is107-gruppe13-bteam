@@ -37,6 +37,14 @@ Her kommer funksjonalitet som skal gjøre det lettere for alle å bygge sin egen
 Prosjektet har en antatt ferdigstillingsdato den 30. oktober.<br>
 
 
+	<!-- Search-input -->
+		<form method="POST" action="search.php" method="POST">
+			<li>Søk etter bruker (brukernavn kun støttet til nå)</li>
+			<li><br><input type="text" name="search"></li>
+			<li><input type="submit" value="søk"></li>
+		</form>
+
+
 </div>
 </body>
 </html>
