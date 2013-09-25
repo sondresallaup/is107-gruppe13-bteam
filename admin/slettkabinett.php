@@ -13,3 +13,9 @@ if (!$slett) {
 die ("klarte ikke å slette $tabell" ); echo mysql_error();
 }
 ?>
+
+<?php
+include "mysql_connect.php";
+include "redigerkomponent.php";
+session_start();
+?>

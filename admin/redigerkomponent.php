@@ -104,7 +104,9 @@ $liste = mysql_query($hent);
 
 //skriver ut tabellen
 while($rad = mysql_fetch_assoc($liste)) {
-echo "<input type='radio' name='test' /> <b>Produsent:</b> "; echo $rad['produsent']; echo " ";
+?>
+<input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" /> 
+<?php echo "<b>Produsent:</b> "; echo $rad['produsent']; echo " ";
 echo "<b>Modell:</b> "; echo $rad['modell']; echo " ";
 echo "<hr>";
 }
@@ -128,7 +130,7 @@ $liste = mysql_query($hent);
 while($rad = mysql_fetch_assoc($liste)) {
 
 ?>
-<input type="radio" name="ch1" value="<?php echo $rad['ID'] ?>" /> 
+<input type="radio" name="ch1" value="<?php echo $rad['id'] ?>" /> 
 <?php echo " <b>Produsent:</b> "; echo $rad['Produsent']; echo " ";
 echo "<b>Modell:</b> "; echo $rad['Modell']; echo " ";
 echo "<hr>";

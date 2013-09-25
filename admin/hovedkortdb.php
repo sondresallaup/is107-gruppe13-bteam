@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 <meta http-equiv="Refresh" 
  content="3; URL=leggtilkomponent.php">

@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+﻿<?php session_start(); ?>
 <html>
 <head>
 <meta http-equiv="Refresh" 
@@ -25,20 +25,6 @@ if (!$result)
 	echo "feilet<br>" . mysql_error();
 }
 
-?>
-<?php
-
-
-//hente alt fra tabell
-$hent = "SELECT * FROM $tabell";
-$liste = mysql_query($hent);
-
-//skriver ut tabellen
-while($rad = mysql_fetch_assoc($liste)) {
-echo $rad['bruker'];
-
-
-}
 ?>
 </body>
 </html>
