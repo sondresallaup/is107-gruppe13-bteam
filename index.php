@@ -146,11 +146,11 @@ session_start();
 			<li>Mitt galleri</li>
 			<li><a href="#" onclick="updateOpprettProsjekter()"> Opprett prosjekter</li>
 			<li><a href="#" onclick="updateInnstillinger()"> Innstillinger </li>
-			<li>Upload</li>
+			<li>Upload</li></a>
 			<li>Forum</li><br><br>
 			<!-- Logg ut-knapp -->
 			<!-- <li><button onclick="logout()">Logg ut</button> -->
-			<li><a href="logout.php"> Logg ut </li>
+			<li><a href="logout.php"> Logg ut </li></a>
 			
 			
 			<?php endif; ?>
