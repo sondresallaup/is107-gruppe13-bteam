@@ -1,9 +1,6 @@
 <html>
- <link rel="stylesheet" href="prolangs.css" type="text/css" media="all" />
-<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
-<head>
-
-<title> test 2 </title>
+ <head>
+<title> Last opp filer</title>
 <body>
 
 <form action="upload_file.php" method="post"
@@ -18,19 +15,7 @@ enctype="multipart/form-data">
 </select>
 <br>
 </form>
-<p id="outputbox">Du har ikke valgt noe enda!</p>
-<script>
-displayResult = function()
-{
-var x=document.getElementById("test2").selectedIndex;
-var y=document.getElementById("test2").options;
-var temp = "Du valgte " + y[x].text;
-document.getElementById("outputbox").innerHTML="<div>"+temp+"</div>";
-}
-
-</script>
 </body>
 
 </html>
-<script>
 
