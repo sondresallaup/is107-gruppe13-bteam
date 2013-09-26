@@ -47,7 +47,7 @@ $id= $_SESSION['id'];
 
 <html>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<h1>Inboks</h1>
+	<h1>Innboks</h1>
 	<div>
 	
 	<?php echo "<b> Til <a href='brukerfiler/$userid/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>"; ?>
