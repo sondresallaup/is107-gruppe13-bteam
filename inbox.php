@@ -24,7 +24,25 @@ $id= $_SESSION['id'];
 				$time = $row['time'];
 				
 			}
-}
+			
+			//Finner bruker bak id
+				$query = mysql_query("SELECT * FROM users WHERE id='$user_one'");
+
+	$numrows = mysql_num_rows($query);
+		
+		//Sjekker om brukernavnet eksisterer
+		if ($numrows!=0){
+
+			//Tar ut data fra db
+			while ($row = mysql_fetch_assoc($query)){
+
+				$username = $row['username'];
+				$email = $row['email'];
+				$firstname = $row['firstname'];
+				$lastname = $row['lastname'];
+				
+			}
+}}
 ?>
 
 <html>
@@ -32,7 +50,7 @@ $id= $_SESSION['id'];
 	<h1>Innboks</h1>
 	<div>
 	
-	<?php echo "Fra ".$user_one." til ".$user_two." - ".$text." ".$time; ?>
+	<?php echo "<b> Fra ".$firstname." ".$lastname." (".$username.") </b><br> ".$text."<br><i>".$time."</i>"; ?>
 	
 	
 	</div>
