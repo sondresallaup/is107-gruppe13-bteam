@@ -69,6 +69,7 @@ $connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013")
 		</form>
 		<a href="inbox.php">Innboks</a>
 		<a href="outbox.php">Utboks</a>
+				<a href="inbox2.php">Innboks 2.0(?=)</a>
 		
 		
 		
