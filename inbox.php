@@ -7,12 +7,12 @@ $id= $_SESSION['id'];
 	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
 	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
 
-	$query = mysql_query("SELECT * FROM conversation WHERE user_two='$id'");
+	$queryto = mysql_query("SELECT * FROM conversation WHERE user_two='$id'");
 
-	$numrows = mysql_num_rows($query);
+	$numberTO = mysql_num_rows($queryto);
 		
-		//Sjekker om brukernavnet eksisterer
-		if ($numrows!=0){
+		/*Sjekker om brukernavnet eksisterer
+		if ($numrows!=0){ 
 
 			//Tar ut data fra db
 			while ($row = mysql_fetch_assoc($query)){
@@ -42,7 +42,7 @@ $id= $_SESSION['id'];
 				$lastname = $row['lastname'];
 				
 			}
-}}
+}} */
 ?>
 
 <html>
@@ -50,9 +50,39 @@ $id= $_SESSION['id'];
 	<h1>Innboks</h1>
 	<div>
 	
-	<?php echo "<b> Til <a href='brukerfiler/$userid/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>"; ?>
+	<?php 
+	
+	if ($numberTO!=0){
+	//Tar ut data fra db
+			while ($row = mysql_fetch_assoc($queryto)){
+			$c_id = $row['c_id'];
+				$user_one = $row['user_one'];
+				$user_two = $row['user_two'];
+				$text = $row['text'];
+				$time = $row['time'];
+				
+				//Finner bruker bak id
+				$queryfrom = mysql_query("SELECT * FROM users WHERE id='$user_one'");
+
+	$numberFROM = mysql_num_rows($queryfrom);
+		
+		//Sjekker om brukernavnet eksisterer
+		if ($numberFROM!=0){
+
+			//Tar ut data fra db
+			while ($row = mysql_fetch_assoc($queryfrom)){
+				$userid = $row['id'];
+				$username = $row['username'];
+				$email = $row['email'];
+				$firstname = $row['firstname'];
+				$lastname = $row['lastname'];
+				
+			}
 	
 	
+	echo "<b> Fra <a href='brukerfiler/$userid/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>"; 
+	
+	}}} ?>
 	</div>
 	
 </html>
