@@ -39,11 +39,11 @@ if ((($_FILES["file"]["type"] == "image/gif") // sjekker at filene er det de ska
 			$sted = $_POST['brukervalg'];
 			echo $sted;
 			if ($sted == "prosjekt") {
-				move_uploaded_file($_FILES["file"]["tmp_name"], "./upload/prosjekt/" . $fname);
+				move_uploaded_file($_FILES["file"]["tmp_name"], "./brukerfiler/$dbid/prosjekt/ . $fname);
 				"<br>";
 			}
 			elseif ($sted == "brukermappe") {
-				move_uploaded_file($_FILES["file"]["tmp_name"], "./upload/brukermappe/" . $fname);
+				move_uploaded_file($_FILES["file"]["tmp_name"], "./brukerfiler/$dbid/prosjekt/" . $fname);
 				"<br>";
 			}
 			elseif ($sted == "profilbilde") {

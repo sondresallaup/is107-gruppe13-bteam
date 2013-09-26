@@ -77,8 +77,11 @@ if($submit){
 
  $listephp="folder.jpg";
  $dest="./brukerfiler/$dbid/$listephp";
- mkdir("./brukerfiler/$dbid", 0777);
  
+	mkdir("./brukerfiler/$dbid/", 0777);
+	mkdir("./brukerfiler/$dbid/upload/", 0777);
+	mkdir("./brukerfiler/$dbid/profilbilde", 0777);
+	mkdir("./brukerfiler/$dbid/prosjekt/", 0777);
  //Setter standardprofilbilde
  copy("profilbilde.png","./brukerfiler/$dbid/profilbilde.jpg");
  
