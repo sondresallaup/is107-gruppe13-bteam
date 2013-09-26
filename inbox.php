@@ -50,7 +50,7 @@ $id= $_SESSION['id'];
 	<h1>Innboks</h1>
 	<div>
 	
-	<?php echo "<b> Fra ".$firstname." ".$lastname." (".$username.") </b><br> ".$text."<br><i>".$time."</i>"; ?>
+	<?php echo "<b> Fra <a href='brukerfiler/$id/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>"; ?>
 	
 	
 	</div>
