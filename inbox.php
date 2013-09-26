@@ -7,7 +7,7 @@ $id= $_SESSION['id'];
 	$connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013") or die("Kan ikke koble til");
 	mysql_select_db("db1010446_pcbyggaren") or die("Finner ikke db");
 
-	$queryto = mysql_query("SELECT * FROM conversation WHERE user_two='$id'");
+	$queryto = mysql_query("SELECT * FROM conversation WHERE user_two='$id' ORDER BY c_id DESC");
 
 	$numberTO = mysql_num_rows($queryto);
 		
@@ -80,7 +80,8 @@ $id= $_SESSION['id'];
 			}
 	
 	
-	echo "<b> Fra <a href='brukerfiler/$userid/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>"; 
+	echo "<b> Fra <a href='brukerfiler/$userid/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>";
+	echo "<br><br><hr>" ;
 	
 	}}} ?>
 	</div>
