@@ -8,28 +8,23 @@ session_start();
 		$msg = "Prosjekt opprettet -link til side-";
 		$pnavn = strip_tags($_GET['prosjektnavn']);
 		$pstatus = strip_tags($_GET['prosjektstatus']);
-		$pkomponent = strip_tags($_GET['prosjektkomponent']);
+		
+		$pkomponent = strip_tags($_GET['prosjektkomponent[]']);
+		$writekomponent = implode("|",$pkomponent);
+		
 		$ptext = strip_tags($_GET['prosjekttextarea']);
 		$submit = strip_tags($_GET['submit']);
 		$username = $_SESSION['username'];
 		$date = date("Y-m-d");
-		echo "<script>";
-		echo "hideForm()";
-		echo "</script>";
-		
-		if($submit){
-			if($pnavn && $pstatus && $pkomponent && $ptext){
-			} else {
-				$infomsg = "info msg";
-			}
 		}
-	}
 	
 
 ?>
 
 <html>
 	<p><?php
-		echo "dette er en test $komponent $pnavn";
+		echo "dette er en test $writekomponent $pnavn <br />";
+		echo var_dump($pkomponent) . "<br />";
+		echo var_dump($writekomponent) . "<br />";
 		?></p>
 </html>
