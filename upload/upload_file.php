@@ -47,11 +47,11 @@ if ((($_FILES["file"]["type"] == "image/gif") // sjekker at filene er det de ska
 				"<br>";
 			}
 			elseif ($sted == "profilbilde") {
-				move_uploaded_file($_FILES["file"]["tmp_name"], "./upload/profilbilde/" . $fname);
+				move_uploaded_file($_FILES["file"]["tmp_name"], "../brukerfiler/$dbid/profilbilde/" . $fname);
 				"<br>";
 			}
 			elseif ($sted == "upload") {
-				move_uploaded_file($_FILES["file"]["tmp_name"], "./upload/upload/" . $fname);
+				move_uploaded_file($_FILES["file"]["tmp_name"], "./brukerfiler/$dbid/upload/" . $fname);
 				"<br>";
 			} else {
 				echo "du har ikke valgt noe";
