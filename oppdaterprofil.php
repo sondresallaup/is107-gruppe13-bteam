@@ -10,8 +10,10 @@ if($_SESSION['loggedin']){
 
 
  $dest="./brukerfiler/$id/";
- mkdir("./brukerfiler/$id", 0777);
- 
+ mkdir("./brukerfiler/$dbid/", 0777);
+	mkdir("./brukerfiler/$dbid/upload/", 0777);
+	mkdir("./brukerfiler/$dbid/profilbilde", 0777);
+	mkdir("./brukerfiler/$dbid/prosjekt/", 0777);
  //Setter standardprofilbilde
  copy("profilbilde.png","./brukerfiler/$id/profilbilde.jpg");
  
