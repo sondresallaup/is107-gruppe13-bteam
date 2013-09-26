@@ -67,7 +67,10 @@ $connect = mysql_connect("mysql23int.stwadmin.net", "u1010446_root","Bteam2013")
 			Melding: <textarea name="text" rows="5" cols="50" required maxlength="255"></textarea><br>
 			<br><input type="submit" name="submit" value="send">
 		</form>
-		<a href="inbox.php">Innboks
+		<a href="inbox.php">Innboks</a>
+		<a href="outbox.php">Utboks</a>
+		
+		
 		
 		<?php echo $outmessage; ?>		
 		
