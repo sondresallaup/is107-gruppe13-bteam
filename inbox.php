@@ -35,7 +35,7 @@ $id= $_SESSION['id'];
 
 			//Tar ut data fra db
 			while ($row = mysql_fetch_assoc($query)){
-
+				$userid = $row['id'];
 				$username = $row['username'];
 				$email = $row['email'];
 				$firstname = $row['firstname'];
@@ -50,7 +50,7 @@ $id= $_SESSION['id'];
 	<h1>Innboks</h1>
 	<div>
 	
-	<?php echo "<b> Fra <a href='brukerfiler/$id/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>"; ?>
+	<?php echo "<b> Fra <a href='brukerfiler/$userid/profil.php'>".$firstname." ".$lastname." (".$username.")</a> </b><br> ".$text."<br><i>".$time."</i>"; ?>
 	
 	
 	</div>
