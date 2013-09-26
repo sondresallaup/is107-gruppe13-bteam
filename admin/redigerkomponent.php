@@ -6,7 +6,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- Javascript koden som lager fanene -->
 <!-- http://www.entheosweb.com/tutorials/css/tabs.asp -->
-	<script type="text/javascript" src="script.js"></script> 
+	<script type="text/javascript" src="/js/script.js"></script> 
 	<title>PC Byggaren</title>
 	<meta charset="UTF-8">
 </head>
@@ -96,7 +96,7 @@
 				echo "<b>Modell:</b> "; 
 				echo $rad['modell']; 
 				echo " ";
-				echo "<hr>";
+				echo "<hr>"; 
 				}
 			?>
 			<input type="submit" value="slett" />

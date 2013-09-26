@@ -7,7 +7,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- Javascript koden som lager fanene -->
 <!-- http://www.entheosweb.com/tutorials/css/tabs.asp -->
-	<script type="text/javascript" src="script.js"></script> 
+	<script type="text/javascript" src="/js/script.js"></script> 
 </head>
 <body>
 <div id="container">
@@ -134,9 +134,9 @@
 			<input type="text"  name="pris" placeholder="pris" /><br>
 			<input type="submit" name="add" value="Legg til" />
 		</form>
-	</div><!-- end minne -->
+	</div><!-- end minne --> 
  </div> <!-- end class=tab_container --> 
 
-</div> <!-- end id=container -->	
+</div> <!-- end id=container --> 
 </body>
 </html>
